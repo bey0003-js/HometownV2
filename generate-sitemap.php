@@ -22,6 +22,9 @@ $main_pages = array(
     'smoke-alarm.html' => array('priority' => '0.7', 'changefreq' => 'monthly'),
     'fans.html' => array('priority' => '0.7', 'changefreq' => 'monthly'),
     'security.html' => array('priority' => '0.7', 'changefreq' => 'monthly'),
+    'gpos.html' => array('priority' => '0.7', 'changefreq' => 'monthly'),
+    'privacy.html' => array('priority' => '0.3', 'changefreq' => 'yearly'),
+    'terms.html' => array('priority' => '0.3', 'changefreq' => 'yearly'),
 );
 
 foreach ($main_pages as $page => $settings) {
