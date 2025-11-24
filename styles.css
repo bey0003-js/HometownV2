@@ -3574,7 +3574,7 @@ footer {
     body.internal .header-top .phone-number a { color: var(--secondary-color); font-weight: 700; font-size: 1.1rem; line-height: 1; }
     body.internal .header-top .phone-number i { color: var(--secondary-color); font-size: 1.05rem; }
     body.internal .header-top .mobile-menu-toggle {
-        position: absolute; right: 12px; bottom: 6px; color: var(--white); font-size: 1.6rem; z-index: 1003; display: inline-flex; align-items: center;
+        position: absolute; right: 12px; bottom: 6px; color: var(--white); font-size: 1.6rem; z-index: 1003; display: inline-flex; align-items: center; cursor: pointer;
     }
     body.internal nav { background: transparent; padding: 0; }
     body.internal nav .mobile-menu-toggle { display: none; }
