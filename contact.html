@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Hometown Electrical - Get In Touch Today</title>
     <meta name="description" content="Contact Hometown Electrical for all your electrical needs. 24/7 emergency service, free quotes, and professional electrical services across Melbourne.">
-    <meta name="keywords" content="contact electrician Melbourne, emergency electrician, electrical services contact, Melbourne electrician phone number, electrical quote">
+    <meta name="keywords" content="contact Hometown Electrical, emergency electrician, electrical services contact, Hometown Electrical phone number, electrical quote">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta property="og:title" content="Contact Us | Hometown Electrical">
@@ -14,21 +14,79 @@
     <meta property="og:url" content="https://melbourneelectricians.com.au/">
     <style>
         .contact-hero {
-            background: linear-gradient(rgba(13, 46, 76, 0.65), rgba(13, 46, 76, 0.75)), url('images/Chandelier-light.jpg');
+            background: linear-gradient(135deg, rgba(13, 46, 76, 0.75), rgba(46, 125, 183, 0.85)), url('images/Chandelier-light.jpg');
             background-size: cover;
             background-position: center;
             color: var(--white);
             text-align: center;
-            min-height: 30vh;
-            padding: 30px 0;
+            min-height: 20vh;
+            padding: 20px 0;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(246, 183, 0, 0.15) 50%, transparent 60%);
+            animation: shimmer 4s infinite;
+            z-index: 1;
+        }
+
+        .contact-hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(246, 183, 0, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .contact-hero h1,
+        .contact-hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-hero h1 {
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(246, 183, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         @media (max-width: 768px) {
             .contact-hero {
-                min-height: 35vh;
-                padding: 25px 0;
+                min-height: 25vh;
+                padding: 15px 0;
             }
         }
 
@@ -257,7 +315,7 @@
                     </div>
                     <h3>Email Us</h3>
                     <p>Send us your electrical questions or requests</p>
-                    <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a>
+                    <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a>
                     <p><small>We respond within 2 hours during business hours</small></p>
                 </div>
                 
@@ -465,7 +523,7 @@
                     <h3>Contact Us</h3>
                     <ul class="contact-list">
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a></li>
                         
                         <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
                     </ul>

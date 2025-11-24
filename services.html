@@ -38,14 +38,54 @@
         .service-section {
             padding: 80px 0;
             border-bottom: 1px solid var(--gray-color);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .service-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, transparent, var(--primary-color) 20%, var(--primary-color) 80%, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 2px 8px rgba(246, 183, 0, 0.5);
+        }
+        
+        .service-section:hover::before {
+            opacity: 1;
         }
 
         .service-section:last-child {
             border-bottom: none;
         }
 
-        .service-section:nth-child(even) {
-            background-color: var(--light-color); 
+        /* Individual section backgrounds */
+        #emergency {
+            background-color: #f0f0f0;
+        }
+        
+        #installations {
+            background-color: #ffffff;
+        }
+        
+        #commercial {
+            background-color: #f0f0f0;
+        }
+        
+        #residential {
+            background-color: #ffffff;
+        }
+        
+        #lighting {
+            background-color: #f0f0f0;
+        }
+        
+        #safety {
+            background-color: #ffffff;
         }
 
         .service-content {
@@ -152,6 +192,7 @@
         .quick-nav ul li a:hover {
             color: var(--primary-color);
         }
+        
 
         @media (max-width: 768px) {
             .service-content {
@@ -197,7 +238,7 @@
                         <i class="fas fa-phone-alt"></i>
                         <a href="tel:+61312345678">03 1234 5678</a>
                     </div>
-                    <a href="
+                    <a href="contact.html" class="cta-button">Get Quote</a>
                 </div>
             </div>
         </div>
@@ -206,7 +247,7 @@
                 <ul class="main-menu">
                     <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
-                        <a href="
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="lighting.html">Lighting</a></li>
                             <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
@@ -237,12 +278,12 @@
     <div class="quick-nav">
         <div class="container">
             <ul>
-                <li><a href="
-                <li><a href="
-                <li><a href="
-                <li><a href="
-                <li><a href="
-                <li><a href="
+                <li><a href="#emergency">Emergency</a></li>
+                <li><a href="#installations">Installations</a></li>
+                <li><a href="#commercial">Commercial</a></li>
+                <li><a href="#residential">Residential</a></li>
+                <li><a href="#lighting">Lighting</a></li>
+                <li><a href="#safety">Safety</a></li>
             </ul>
         </div>
     </div>
@@ -288,7 +329,7 @@
 
                     <div class="service-cta">
                         <a href="tel:+61312345678" class="cta-button"><i class="fas fa-phone-alt"></i> Call Emergency Line</a>
-                        <a href="
+                        <a href="contact.html" class="cta-button secondary">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-image">
@@ -339,7 +380,7 @@
 
                     <div class="service-cta">
                         <a href="tel:+61312345678" class="cta-button"><i class="fas fa-phone-alt"></i> Call For Quote</a>
-                        <a href="
+                        <a href="contact.html" class="cta-button secondary">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-image">
@@ -390,7 +431,7 @@
 
                     <div class="service-cta">
                         <a href="tel:+61312345678" class="cta-button"><i class="fas fa-phone-alt"></i> Call For Quote</a>
-                        <a href="
+                        <a href="contact.html" class="cta-button secondary">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-image">
@@ -441,7 +482,7 @@
 
                     <div class="service-cta">
                         <a href="tel:+61312345678" class="cta-button"><i class="fas fa-phone-alt"></i> Call For Quote</a>
-                        <a href="
+                        <a href="contact.html" class="cta-button secondary">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-image">
@@ -492,7 +533,7 @@
 
                     <div class="service-cta">
                         <a href="lighting.html" class="cta-button"><i class="fas fa-info-circle"></i> Learn More</a>
-                        <a href="
+                        <a href="contact.html" class="cta-button secondary">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-image">
@@ -544,7 +585,7 @@
                     <div class="service-cta">
                         <a href="smoke-alarm.html" class="cta-button"><i class="fas fa-info-circle"></i> Smoke Alarms</a>
                         <a href="security.html" class="cta-button"><i class="fas fa-info-circle"></i> Security Systems</a>
-                        <a href="
+                        <a href="contact.html" class="cta-button secondary">Get Quote</a>
                     </div>
                 </div>
                 <div class="service-image">
@@ -610,7 +651,7 @@
                     <i class="fas fa-envelope"></i>
                     <div class="contact-details">
                         <h4>Email Us</h4>
-                        <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a>
+                        <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a>
                     </div>
                 </div>
                 
@@ -634,10 +675,10 @@
                     </div>
                     <p>Your trusted local electricians serving all Melbourne suburbs. Available 24/7 for all your electrical needs.</p>
                     <div class="social-icons">
-                        <a href="
-                        <a href="
-                        <a href="
-                        <a href="
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -665,7 +706,7 @@
                     <h3>Contact Us</h3>
                     <ul class="contact-list">
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a></li>
                         
                         <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
                     </ul>
@@ -688,7 +729,7 @@
             <i class="fas fa-phone-alt"></i>
             <span>Call Now</span>
         </a>
-        <a href="
+        <a href="contact.html" class="floating-quote">
             <i class="fas fa-clipboard-list"></i>
             <span>Get Quote</span>
         </a>

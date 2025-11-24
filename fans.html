@@ -9,13 +9,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .fans-hero {
-            background: linear-gradient(rgba(13, 46, 76, 0.7), rgba(13, 46, 76, 0.8)), url('images/CeilingFanroom.jpg');
+            background: linear-gradient(135deg, rgba(13, 46, 76, 0.75), rgba(46, 125, 183, 0.85)), url('images/CeilingFanroom.jpg');
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 72px 0; 
+            padding: 20px 0; 
+            min-height: 20vh;
             position: relative;
             overflow: hidden;
+        }
+
+        .fans-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(246, 183, 0, 0.15) 50%, transparent 60%);
+            animation: shimmer 4s infinite;
+            z-index: 1;
+        }
+
+        .fans-hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(246, 183, 0, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fans-hero h1 {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(246, 183, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .fans-hero h1 {
@@ -673,7 +726,7 @@
                     <i class="fas fa-envelope"></i>
                     <div class="contact-details">
                         <h4>Email</h4>
-                        <a href="mailto:info@melbourneelectricians.com">info@melbourneelectricians.com</a>
+                        <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a>
                     </div>
                 </div>
                 
@@ -736,7 +789,7 @@
                     <h3>Contact Info</h3>
                     <ul class="contact-list">
                         <li><i class="fas fa-phone"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@melbourneelectricians.com">info@melbourneelectricians.com</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a></li>
                         
                         <li><i class="fas fa-clock"></i> 24/7 Emergency Service</li>
                     </ul>

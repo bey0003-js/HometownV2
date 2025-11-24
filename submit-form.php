@@ -2,7 +2,7 @@
 
 
 
-$recipient_email = "service@melbourneelectricians.com.au";
+$recipient_email = "service@hometownelectrical.com.au";
 
 
 $subject_prefix = "Website Quote Request: ";

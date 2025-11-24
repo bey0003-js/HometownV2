@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Hometown Electrical - Serving Every Corner of Melbourne</title>
     <meta name="description" content="Discover Hometown Electrical - your local electrical experts serving CBD, Richmond, Brunswick, St Kilda, Hawthorn, Footscray and all Melbourne suburbs. Learn our story across Melbourne's diverse communities.">
-    <meta name="keywords" content="Melbourne electricians, local electricians CBD, Richmond electricians, Brunswick electrical services, St Kilda electricians, Hawthorn electrical work">
+    <meta name="keywords" content="Hometown Electrical, local electricians CBD, Richmond electricians, Brunswick electrical services, St Kilda electricians, Hawthorn electrical work">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -20,8 +20,8 @@
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 30px 0;
-            min-height: 30vh;
+            padding: 20px 0;
+            min-height: 20vh;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -36,8 +36,26 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, transparent 40%, rgba(255, 183, 0, 0.1) 50%, transparent 60%);
-            animation: shimmer 3s infinite;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 183, 0, 0.15) 50%, transparent 60%);
+            animation: shimmer 4s infinite;
+            z-index: 1;
+        }
+
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(246, 183, 0, 0.12) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         @keyframes shimmer {
@@ -50,6 +68,19 @@
             margin-bottom: 1rem;
             position: relative;
             z-index: 2;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(246, 183, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .about-hero .subtitle {
@@ -481,7 +512,7 @@
                     
                     <p>Our founder, Michael, started after being frustrated with unreliable contractors. "I wanted to build a company where customers in Fitzroy get the same honest service as those in Toorak," he says. Today, whether it's Mrs. Chen in Box Hill needing emergency repairs or the new café in Brunswick requiring complete rewiring, our commitment remains unchanged.</p>
                     
-                    <p><strong>We're not just electricians serving Melbourne - we're Melbourne locals who happen to be expert electricians.</strong></p>
+                    <p><strong>We're not just electricians serving Melbourne - we're Hometown Electrical, Melbourne locals who happen to be expert electricians.</strong></p>
                 </div>
                 
                 
@@ -562,8 +593,8 @@
                 <div class="timeline-item">
                     <div class="timeline-year">2023</div>
                     <div class="timeline-content">
-                        <h3>Melbourne's Most Trusted Electricians</h3>
-                        <p>Today, we're the electricians Melbourne calls first. From Craigieburn to Frankston, Werribee to Ringwood, our reputation for honest service, reliable timing, and expert workmanship has made us the trusted choice for thousands of Melbourne families and businesses.</p>
+                        <h3>Melbourne's Most Trusted Electrical Team</h3>
+                        <p>Today, Hometown Electrical is the team Melbourne calls first. From Craigieburn to Frankston, Werribee to Ringwood, our reputation for honest service, reliable timing, and expert workmanship has made us the trusted choice for thousands of Melbourne families and businesses.</p>
                     </div>
                 </div>
             </div>
@@ -633,7 +664,7 @@
         <div class="container">
             <div class="cta-content">
                 <h2>Require Some Electrical Work Completed?</h2>
-                <p>Whether you're in the heart of the CBD or the outer suburbs, we're your local Melbourne electricians. We understand your suburb, your needs, and your community.</p>
+                <p>Whether you're in the heart of the CBD or the outer suburbs, we're your local Hometown Electrical team. We understand your suburb, your needs, and your community.</p>
                 <div class="cta-buttons">
                     <a href="tel:+61312345678" class="cta-button"><i class="fas fa-phone-alt"></i> Call the Hometown Electrica Team Now!</a>
                     <a href="contact.html" class="cta-button secondary"><i class="fas fa-map-marker-alt"></i> Find Your Local Team</a>
@@ -682,7 +713,7 @@
                     <h3>Contact Us</h3>
                     <ul class="contact-list">
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a></li>
                         
                         <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
                     </ul>

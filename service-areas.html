@@ -8,15 +8,73 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .service-areas-hero {
-            background: linear-gradient(rgba(13, 46, 76, 0.85), rgba(13, 46, 76, 0.95)), url('images/service-areas-hero.jpg');
+            background: linear-gradient(135deg, rgba(13, 46, 76, 0.9), rgba(46, 125, 183, 0.95)), url('images/service-areas-hero.jpg');
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 30px 0;
-            min-height: 30vh;
+            padding: 20px 0;
+            min-height: 20vh;
             text-align: center;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-areas-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 183, 0, 0.15) 50%, transparent 60%);
+            animation: shimmer 4s infinite;
+            z-index: 1;
+        }
+
+        .service-areas-hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(246, 183, 0, 0.12) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .service-areas-hero h1,
+        .service-areas-hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-areas-hero h1 {
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(246, 183, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .map-section {
@@ -406,7 +464,7 @@
                     <h3>Contact Us</h3>
                     <ul class="contact-list">
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a></li>
                         
                         <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
                     </ul>

@@ -203,7 +203,7 @@ header {
 
 .header-top {
     background-color: var(--secondary-color);
-    padding: 10px 0; 
+    padding: 8px 0; 
 }
 
 .header-top .container {
@@ -213,13 +213,20 @@ header {
 }
 
 .logo {
-    max-width: 280px; 
+    max-width: 200px; 
     height: auto;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .contact-info {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .phone-number {
@@ -238,46 +245,70 @@ header {
     color: var(--white);
     font-weight: 600;
     font-size: 1.1rem;
+    text-decoration: none;
 }
 
 .phone-number a:hover {
     color: var(--primary-color);
 }
 
+.header-top .cta-button {
+    background: linear-gradient(135deg, var(--primary-color), #e6a100);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(246,183,0,0.3);
+    white-space: nowrap;
+}
+
+.header-top .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(246,183,0,0.4);
+    background: linear-gradient(135deg, #ffc700, #ffa500);
+}
+
 nav {
-    padding: 2px 0;
+    padding: 0;
     background-color: var(--white);
 }
 
 nav .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding-top: 0;
+    padding-bottom: 5px;
 }
 
 .main-menu {
     display: flex;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--spacing-md);
 }
 
 .main-menu li {
-    margin-right: var(--spacing-md);
     position: relative;
-}
-
-.main-menu li:last-child {
-    margin-right: 0;
 }
 
 .main-menu a {
     color: var(--secondary-color);
     font-weight: 600;
-    padding: 3px 0;
+    padding: 8px 15px;
     position: relative;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     height: 100%;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .main-menu a:after {
@@ -366,26 +397,77 @@ nav .container {
 }
 
 .hero {
-    background: linear-gradient(rgba(13, 46, 76, 0.4), rgba(13, 46, 76, 0.6)), url(images/Living-Room-Lighting.jpg);
+    background: linear-gradient(135deg, rgba(13, 46, 76, 0.75), rgba(46, 125, 183, 0.8)), url(images/Living-Room-Lighting.jpg);
     background-size: cover;
     background-position: center;
     color: var(--white);
-    padding: calc(var(--spacing-xl) * 2) 0;
+    padding: var(--spacing-lg) 0;
     position: relative;
-    min-height: 60vh;
+    min-height: 25vh;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 40%, rgba(246, 183, 0, 0.15) 50%, transparent 60%);
+    animation: shimmer 4s infinite;
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(246, 183, 0, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .hero-content {
     max-width: 800px;
     text-align: center;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
     color: var(--white);
     font-size: 3.5rem;
     margin-bottom: var(--spacing-xs);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(246, 183, 0, 0.3);
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero h2 {
@@ -1564,12 +1646,44 @@ footer {
 }
 
 .service-hero {
-    background: linear-gradient(rgba(13, 46, 76, 0.85), rgba(13, 46, 76, 0.95)), url('../images/service-hero-bg.jpg');
+    background: linear-gradient(135deg, rgba(13, 46, 76, 0.85), rgba(46, 125, 183, 0.9)), url('../images/service-hero-bg.jpg');
     background-size: cover;
     background-position: center;
     color: var(--white);
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-md) 0;
     text-align: center;
+    min-height: 25vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 40%, rgba(246, 183, 0, 0.15) 50%, transparent 60%);
+    animation: shimmer 4s infinite;
+    z-index: 1;
+}
+
+.service-hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(246, 183, 0, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    z-index: 1;
+}
+
+.service-hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .service-hero-content {
@@ -1581,7 +1695,10 @@ footer {
     color: var(--white);
     font-size: 3.2rem;
     margin-bottom: var(--spacing-sm);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(246, 183, 0, 0.3);
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    z-index: 2;
 }
 
 .service-hero p {
@@ -2407,10 +2524,36 @@ footer {
 }
 
 .security-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/security-hero.jpg') no-repeat center;
+    background: linear-gradient(135deg, rgba(13, 46, 76, 0.85), rgba(46, 125, 183, 0.9)), url('images/security-hero.jpg') no-repeat center;
     background-size: cover;
     position: relative;
-    padding: 120px 0;
+    padding: 40px 0;
+    min-height: 25vh;
+    overflow: hidden;
+}
+
+.security-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 40%, rgba(246, 183, 0, 0.15) 50%, transparent 60%);
+    animation: shimmer 4s infinite;
+    z-index: 1;
+}
+
+.security-hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(246, 183, 0, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    z-index: 1;
 }
 
 .security-badge {
@@ -3312,6 +3455,47 @@ footer {
     color: var(--secondary-color);
 }
 
+@media (min-width: 992px) {
+    .header-top {
+        padding: 5px 0;
+    }
+    
+    .logo {
+        max-width: 150px;
+    }
+    
+    nav .container {
+        justify-content: center;
+        padding-bottom: 5px;
+    }
+    
+    .main-menu {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .main-menu a {
+        font-size: 1.2rem !important;
+        padding: 8px 15px !important;
+    }
+    
+    .header-top .phone-number a {
+        font-size: 1.5rem !important;
+        font-weight: 700 !important;
+    }
+    
+    .header-top .phone-number i {
+        font-size: 1.3rem !important;
+    }
+    
+    .header-top .cta-button {
+        padding: 12px 32px !important;
+        font-size: 1.05rem !important;
+        border-radius: 35px !important;
+        box-shadow: 0 6px 18px rgba(246,183,0,0.35) !important;
+    }
+}
+
 @media (max-width: 991px) {
     .legal-document {
         padding: 30px;
@@ -3364,18 +3548,18 @@ footer {
         left: 0;
         right: 0;
         z-index: 1002;
-        padding: 10px 0;
+        padding: 6px 0;
         background-color: var(--secondary-color);
     }
     body.internal .header-top .container {
         display: grid;
         grid-template-columns: 1fr; 
         justify-items: center;
-        row-gap: 6px;
+        row-gap: 4px;
     }
     body.internal .header-top .logo { text-align: center; }
     body.internal .header-top .logo img {
-        max-height: 64px; width: auto; height: auto; display: block; margin: 0 auto;
+        max-height: 60px; width: auto; height: auto; display: block; margin: 0 auto;
     }
     body.internal .header-top .contact-info { margin-top: 55px; }
     body.internal .header-top .contact-info .cta-button { display: none; }
