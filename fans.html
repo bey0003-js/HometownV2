@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceiling Fan Installation & Repair - Hometown Electrical</title>
+    <meta name="description" content="Professional ceiling fan and exhaust fan installation, repair services in Melbourne. Expert electrical fan solutions for homes and businesses.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .fans-hero {
+            background: linear-gradient(rgba(13, 46, 76, 0.7), rgba(13, 46, 76, 0.8)), url('images/CeilingFanroom.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 72px 0; 
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fans-hero h1 {
+            color: var(--white);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .hero-content {
+            padding: 24px; 
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .feature-circles {
+            padding: 64px 0;
+            background: radial-gradient(circle at center, var(--light-color) 0%, white 100%); 
+        }
+
+        .circles-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 36px;
+        }
+
+        .feature-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+        .feature-circle:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .circle-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            z-index: 2;
+        }
+
+        .circle-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            z-index: 2;
+        }
+
+        .diagonal-section {
+            background: linear-gradient(135deg, var(--light-color) 0%, white 100%);
+            padding: 50px 0;
+            position: relative;
+            transform: skewY(-3deg);
+            margin: 60px 0;
+        }
+
+        .diagonal-content {
+            transform: skewY(3deg);
+        }
+
+        .fan-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .fan-type-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .fan-type-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(246, 183, 0, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .fan-type-card:hover::after {
+            left: 100%;
+        }
+
+        .fan-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .type-header {
+            margin-bottom: 25px;
+        }
+
+        .type-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .zigzag-section {
+            padding: 80px 0;
+            background: var(--light-color);
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .zigzag-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .installation-steps {
+            background: white;
+            color: var(--text-color);
+            border-radius: 15px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover {
+            background: var(--light-color);
+            transform: translateX(10px);
+        }
+
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            flex-shrink: 0;
+        }
+
+        .hexagon-pricing {
+            padding: 80px 0;
+            background: linear-gradient(45deg, 
+        }
+
+        .hexagon-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .hexagon-card {
+            width: 200px;
+            height: 230px;
+            background: white;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .hexagon-card:hover {
+            transform: scale(1.1);
+            background: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        .benefit-waves {
+            padding: 64px 0;
+            background: linear-gradient(135deg, white, var(--light-color));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave-shape {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--primary-color);
+            clip-path: ellipse(100% 100% at 50% 0%);
+            opacity: 0.1;
+        }
+
+        .benefits-carousel {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+        }
+
+        .benefit-card {
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            scroll-snap-align: start;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 991px) {
+            .hero-split {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .zigzag-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hexagon-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .circles-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature-circle {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body class="internal">
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                    </a>
+                </div>
+                <div class="mobile-menu-toggle" aria-label="Toggle mobile menu" role="button" tabindex="0">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="contact-info">
+                    <div class="phone-number">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+61312345678">03 1234 5678</a>
+                    </div>
+                    <a href="contact.html" class="cta-button">Get Quote</a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="lighting.html">Lighting</a></li>
+                            <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                            <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                            <li><a href="fans.html" class="active">Ceiling Fan</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="gpos.html">Power</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="service-areas.html">Service Areas</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="fans-hero">
+        <div class="container">
+            <div class="hero-split">
+                <div class="hero-content">
+                    <h1>Expert Fan Installation & Repair</h1>
+                    <p>Professional ceiling fan, exhaust fan, and ventilation solutions throughout Melbourne. Stay cool and comfortable with our expert electrical fan services.</p>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="cta-button">Get Quote</a>
+                        <a href="tel:+61312345678" class="cta-button secondary">Call Now</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="feature-circles">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Fan Services?</h2>
+            <div class="circles-container">
+                <div class="feature-circle">
+                    <i class="fas fa-certificate circle-icon"></i>
+                    <h3 class="circle-title">Licensed Experts</h3>
+                </div>
+                <div class="feature-circle">
+                    <i class="fas fa-tools circle-icon"></i>
+                    <h3 class="circle-title">Quality Installation</h3>
+                </div>
+                <div class="feature-circle">
+                    <i class="fas fa-wind circle-icon"></i>
+                    <h3 class="circle-title">All Fan Types</h3>
+                </div>
+                <div class="feature-circle">
+                    <i class="fas fa-shield-alt circle-icon"></i>
+                    <h3 class="circle-title">Safety First</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="diagonal-section">
+        <div class="container diagonal-content">
+            <h2 class="section-title">Fan Types We Install</h2>
+            <div class="fan-types-grid">
+                <div class="fan-type-card">
+                    <div class="type-header">
+                        <div class="type-badge">Most Popular</div>
+                        <h3>Ceiling Fans</h3>
+                    </div>
+                    <p>Energy-efficient ceiling fans for bedrooms, living rooms, and outdoor areas. Choose from modern, traditional, and industrial styles.</p>
+                    <ul style="text-align: left; margin-top: 20px;">
+                        <li>• Indoor & outdoor models</li>
+                        <li>• Remote control options</li>
+                        <li>• LED lighting integrated</li>
+                        <li>• Energy star rated</li>
+                    </ul>
+                </div>
+
+                <div class="fan-type-card">
+                    <div class="type-header">
+                        <div class="type-badge">Essential</div>
+                        <h3>Exhaust Fans</h3>
+                    </div>
+                    <p>Bathroom and kitchen exhaust fans to remove moisture, odors, and improve air quality throughout your home.</p>
+                    <ul style="text-align: left; margin-top: 20px;">
+                        <li>• Bathroom ventilation</li>
+                        <li>• Kitchen range hoods</li>
+                        <li>• Quiet operation</li>
+                        <li>• Timer controls</li>
+                    </ul>
+                </div>
+
+                <div class="fan-type-card">
+                    <div class="type-header">
+                        <div class="type-badge">Commercial</div>
+                        <h3>Industrial Fans</h3>
+                    </div>
+                    <p>Heavy-duty ventilation fans for workshops, warehouses, and commercial spaces requiring powerful air movement.</p>
+                    <ul style="text-align: left; margin-top: 20px;">
+                        <li>• High CFM rating</li>
+                        <li>• Variable speed control</li>
+                        <li>• Weather resistant</li>
+                        <li>• Commercial grade</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="zigzag-section">
+        <div class="container">
+            <div class="zigzag-container">
+                <div>
+                    <h2>Professional Installation Process</h2>
+                    <p>Our systematic approach ensures safe, efficient fan installation with minimal disruption to your home or business.</p>
+                    <div style="margin-top: 30px;">
+                        <a href="contact.html" class="cta-button">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="installation-steps">
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div>
+                            <h4>Site Inspection</h4>
+                            <p>Assess ceiling structure, electrical requirements, and optimal fan placement.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div>
+                            <h4>Preparation</h4>
+                            <p>Install proper support brackets and run electrical wiring as needed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <i class="fas fa-screwdriver"></i>
+                        </div>
+                        <div>
+                            <h4>Installation</h4>
+                            <p>Mount fan securely, connect wiring, and test all functions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h4>Final Testing</h4>
+                            <p>Ensure proper operation, balance, and safety compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefit-waves">
+        <div class="wave-shape"></div>
+        <div class="container">
+            <h2 class="section-title">Benefits of Professional Fan Installation</h2>
+            <div class="benefits-carousel">
+                <div class="benefit-card">
+                    <i class="fas fa-dollar-sign" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                    <h3>Energy Savings</h3>
+                    <p>Reduce air conditioning costs by up to 30% with properly installed ceiling fans.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-home" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                    <h3>Improved Comfort</h3>
+                    <p>Better air circulation creates more comfortable living and working environments.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-leaf" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                    <h3>Eco-Friendly</h3>
+                    <p>Reduce carbon footprint with energy-efficient fan solutions.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-plus" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                    <h3>Property Value</h3>
+                    <p>Quality fan installations add value to your property.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What size ceiling fan do I need?</h3>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Fan size depends on room dimensions. Small rooms (up to 10m²) need 36-42" fans, medium rooms (10-15m²) need 44-52" fans, and large rooms (15m²+) need 54" or larger fans.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Can you install a fan where there's no existing wiring?</h3>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Yes, our licensed electricians can run new wiring from your switchboard to install fans in any location. We'll assess the best route and provide a detailed quote.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How long does fan installation take?</h3>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Standard ceiling fan installation typically takes 1-2 hours. New wiring or complex installations may take longer depending on accessibility and requirements.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Do you provide warranties on fan installations?</h3>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Yes, we provide comprehensive warranties on all installation work and can arrange manufacturer warranties on the fans themselves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Stay Cool & Comfortable?</h2>
+                <p>Contact our licensed electricians for professional fan installation and repair services throughout Melbourne.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+61312345678" class="cta-button">Call Now</a>
+                    <a href="contact.html" class="cta-button secondary">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="quote-section" id="quote">
+        <div class="container">
+            <div class="form-container">
+                <h2>Get Your Free Fan Installation Quote</h2>
+                <p>Tell us about your fan installation needs and we'll provide a detailed, no-obligation quote.</p>
+                
+                <form id="quote-form" class="quote-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fan-type">Fan Type Required</label>
+                        <select id="fan-type" name="fan-type" required>
+                            <option value="">Select Fan Type</option>
+                            <option value="ceiling-fan">Ceiling Fan</option>
+                            <option value="exhaust-fan">Exhaust Fan</option>
+                            <option value="industrial-fan">Industrial Fan</option>
+                            <option value="range-hood">Range Hood</option>
+                            <option value="multiple">Multiple Fans</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="room-location">Room/Location</label>
+                        <select id="room-location" name="room-location" required>
+                            <option value="">Select Location</option>
+                            <option value="bedroom">Bedroom</option>
+                            <option value="living-room">Living Room</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="bathroom">Bathroom</option>
+                            <option value="outdoor">Outdoor Area</option>
+                            <option value="commercial">Commercial Space</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Room size, existing wiring, specific fan preferences, etc..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Get Free Quote</button>
+                </form>
+            </div>
+            
+            <div class="contact-info-container">
+                <h3>Contact Information</h3>
+                
+                <div class="contact-method">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="contact-details">
+                        <h4>Phone</h4>
+                        <a href="tel:+61312345678">03 1234 5678</a>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <a href="mailto:info@melbourneelectricians.com">info@melbourneelectricians.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-details">
+                        <h4>Service Areas</h4>
+                        <p>All Melbourne Suburbs</p>
+                    </div>
+                </div>
+                
+                <div class="business-hours">
+                    <h4>Business Hours</h4>
+                    <p>Monday - Friday: Anytime</p>
+                    <p>Saturday: Anytime</p>
+                    <p>Sunday: Anytime!</p>
+                    <p>24/7 Emergency Service Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                    </div>
+                    <p>Your trusted local electricians serving all Melbourne suburbs. Available 24/7 for all your electrical needs.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="service-areas.html">Service Areas</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="lighting.html">Lighting</a></li>
+                        <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                        <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                        <li><a href="fans.html">Ceiling Fan</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="gpos.html">Power</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@melbourneelectricians.com">info@melbourneelectricians.com</a></li>
+                        
+                        <li><i class="fas fa-clock"></i> 24/7 Emergency Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hometown Electrical. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="floating-cta">
+        <a href="tel:+61312345678" class="floating-phone">
+            <i class="fas fa-phone"></i>
+            Call Now
+        </a>
+        <a href="contact.html" class="floating-quote">
+            <i class="fas fa-file-alt"></i>
+            Get Quote
+        </a>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

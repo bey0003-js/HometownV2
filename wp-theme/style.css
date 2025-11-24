@@ -1,0 +1,43 @@
+
+
+
+:root {
+    --primary-color: #f6b700;
+    --secondary-color: #0d2e4c;
+    --accent-color: #2e7db7;
+    --dark-color: #1a1a1a;
+    --light-color: #f5f5f5;
+    --gray-color: #cccccc;
+    --text-color: #333333;
+    --white: #ffffff;
+    
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+    
+    --h1-size: 3rem;
+    --h2-size: 2.5rem;
+    --h3-size: 1.8rem;
+    --h4-size: 1.4rem;
+    --body-size: 1rem;
+    --small-size: 0.9rem;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
+    
+    --border-radius: 5px;
+    
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    --brand-color: #f6b700;
+    --brand-dark: #d4a000;
+}
+

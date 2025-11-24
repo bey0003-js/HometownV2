@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighting Services | Hometown Electrical</title>
+    <meta name="description" content="Professional lighting design and installation services in Melbourne. Enhance your home with energy-efficient lighting solutions from licensed electricians.">
+    <meta name="keywords" content="lighting installation, LED lighting, outdoor lighting, smart lighting, Melbourne electrician, energy-efficient lighting">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <meta property="og:title" content="Lighting Services | Hometown Electrical">
+    <meta property="og:description" content="Professional lighting design and installation services in Melbourne. Enhance your home with energy-efficient lighting solutions.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://melbourneelectricians.com.au/">
+    <style>
+        
+        @media (max-width: 768px) {
+            .header-top {
+                position: fixed; 
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1002;
+                padding: 4px 0; 
+            }
+            .header-top .container {
+                display: grid;
+                grid-template-columns: 1fr; 
+                justify-items: center;
+                row-gap: 6px;
+            }
+            .header-top .logo {
+                will-change: transform;
+                transform-origin: center top; 
+                justify-self: center; 
+                text-align: center;
+            }
+            .header-top .logo img {
+                max-height: 64px; 
+                height: auto;
+                width: auto;
+                display: block;
+                margin: 0 auto;
+            }
+            .header-top .contact-info { margin-top: 55px; }
+            
+            .header-top .contact-info .cta-button { display: none; }
+            .header-top .phone-number {
+                background: linear-gradient(135deg, var(--primary-color), #e6a100);
+                color: var(--secondary-color);
+                padding: 8px 16px; 
+                border-radius: 6px;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                box-shadow: 0 6px 16px rgba(246,183,0,0.3); 
+            }
+            .header-top .phone-number a { color: var(--secondary-color); font-weight: 700; font-size: 1.1rem; line-height: 1; }
+            .header-top .phone-number i { color: var(--secondary-color); font-size: 1.05rem; }
+
+            
+            .header-top .mobile-menu-toggle {
+                position: absolute;
+                right: 12px;
+                bottom: 6px;
+                color: var(--white);
+                font-size: 1.6rem;
+                z-index: 1003;
+                display: inline-flex;
+                align-items: center;
+            }
+            
+            nav { background: transparent; padding: 0; }
+            nav .mobile-menu-toggle { display: none; }
+            nav .container { position: static; padding: 0; height: 0; }
+            
+            nav .main-menu {
+                position: fixed;
+                top: var(--headerHeight, 56px);
+                left: 0;
+                right: 0;
+                background: var(--white);
+                display: none;
+                flex-direction: column;
+                padding: 10px 12px;
+                box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+                z-index: 1001;
+            }
+            nav .main-menu.active { display: flex; }
+
+            
+            .service-overview { padding-top: 12px; }
+            .service-overview-image { margin-bottom: 8px; }
+            .service-overview h2 { margin-top: 0; }
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Lighting Services",
+      "provider": {
+        "@type": "ElectricalBusiness",
+        "name": "Hometown Electrical",
+        "telephone": "+61-3-1234-5678"
+      },
+      "description": "Professional lighting design and installation services for Melbourne homes and businesses. Energy-efficient solutions for indoor and outdoor spaces.",
+      "areaServed": "Greater Melbourne",
+      "offers": {
+        "@type": "Offer",
+        "price": "150.00",
+        "priceCurrency": "AUD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "150.00",
+          "maxPrice": "3000.00",
+          "priceCurrency": "AUD"
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                    </a>
+                </div>
+                <div class="contact-info">
+                    <div class="phone-number">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+61312345678">03 1234 5678</a>
+                    </div>
+                    <a href="contact.html" class="cta-button">Get Quote</a>
+                </div>
+                <div class="mobile-menu-toggle" aria-label="Toggle mobile menu" role="button" tabindex="0">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="lighting.html" class="active">Lighting</a></li>
+                            <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                            <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                            <li><a href="fans.html">Fans</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="gpos.html">Power</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="service-areas.html">Service Areas</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="service-hero" style="background: linear-gradient(rgba(13, 46, 76, 0.7), rgba(13, 46, 76, 0.8)), url('images/Downlights.jpg'); background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1>Lighting Installation</h1>
+                <p>Transform your space with custom lighting solutions that enhance atmosphere, functionality, and energy efficiency</p>
+                <div class="hero-buttons">
+                    <a href="tel:+61312345678" class="cta-button"><i class="fas fa-phone-alt"></i> Call Now</a>
+                    <a href="contact.html" class="cta-button secondary">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-overview">
+        <div class="container">
+            <div class="service-overview-grid">
+                <div class="service-overview-content">
+                    <h2>Melbourne's Premium Lighting Specialists</h2>
+                    <p>The right lighting doesn't just illuminate a space – it creates mood, enhances functionality, showcases architecture, and can dramatically transform the look and feel of your home or business.</p>
+                    <p>At Hometown Electrical, our lighting experts combine technical knowledge with design expertise to create tailored lighting solutions that perfectly balance aesthetics, functionality, and energy efficiency.</p>
+                    <div class="service-features">
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Custom Design</h3>
+                            <p>Personalized lighting plans tailored to your space and needs</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <h3>Energy Efficiency</h3>
+                            <p>LED solutions that reduce power consumption and costs</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Smart Control</h3>
+                            <p>App-controlled lighting systems for convenience and efficiency</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-certificate"></i>
+                            <h3>Quality Fixtures</h3>
+                            <p>Premium products with extended warranties</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-overview-image">
+                    <img src="images/Living-Room-LED-Lights.jpg" alt="Modern Home Lighting Design">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signs-section" id="signs">
+        <div class="container">
+            <h2 class="section-title">Signs You Need a Lighting Upgrade</h2>
+            <div class="signs-grid">
+                <div class="sign-card">
+                    <div class="icon"><i class="fas fa-wallet"></i></div>
+                    <h3>High Energy Bills</h3>
+                    <p>If you're still using halogen or incandescent bulbs, switching to LED lighting can reduce your energy consumption by up to 80%.</p>
+                </div>
+                <div class="sign-card">
+                    <div class="icon"><i class="fas fa-eye"></i></div>
+                    <h3>Poor Visibility</h3>
+                    <p>Inadequate lighting causing eye strain, difficulty reading, or areas of your home that feel too dark or shadowy.</p>
+                </div>
+                <div class="sign-card">
+                    <div class="icon"><i class="fas fa-home"></i></div>
+                    <h3>Outdated Fixtures</h3>
+                    <p>Older light fixtures that are yellowing, damaged, or stylistically dated can detract from your home's appearance.</p>
+                </div>
+                <div class="sign-card">
+                    <div class="icon"><i class="fas fa-moon"></i></div>
+                    <h3>Security Concerns</h3>
+                    <p>Dark exterior areas around your property that could benefit from security lighting to enhance safety.</p>
+                </div>
+                <div class="sign-card">
+                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Frequent Bulb Replacement</h3>
+                    <p>If you're constantly replacing bulbs, upgrading to long-lasting LED solutions can save time and money.</p>
+                </div>
+                <div class="sign-card">
+                    <div class="icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Renovation Plans</h3>
+                    <p>If you're updating your interior, new lighting can dramatically enhance your renovation results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Benefits of Professional Lighting Solutions</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Reduced Energy Costs</h3>
+                        <p>Modern LED lighting uses up to 80% less electricity than traditional bulbs while providing better illumination. This translates to significant savings on your energy bills month after month.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Enhanced Aesthetics</h3>
+                        <p>Strategic lighting design can highlight architectural features, create focal points, and transform the atmosphere of any room. Proper lighting makes spaces feel larger, more inviting, and more harmonious.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Improved Functionality</h3>
+                        <p>Task lighting properly positioned in kitchens, home offices, and workspaces enhances productivity and reduces eye strain. Ambient and accent lighting create layers that adapt to different activities.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Enhanced Security</h3>
+                        <p>Well-designed outdoor lighting illuminates dark areas around your property, deterring potential intruders and making pathways safer for navigation at night.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Increased Property Value</h3>
+                        <p>Quality lighting design is a selling point that increases perceived value. Modern, energy-efficient lighting systems are attractive features for potential buyers.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Smart Home Integration</h3>
+                        <p>Modern lighting systems can integrate with smart home technology, allowing for automated schedules, remote control, voice commands, and integration with other smart devices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section" id="process">
+        <div class="container">
+            <h2 class="section-title">Our Lighting Design & Installation Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Consultation & Assessment</h3>
+                        <p>We begin with a thorough assessment of your space, discussing your needs, preferences, and budget. We consider factors like natural light, room usage, and architectural features.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Custom Lighting Design</h3>
+                        <p>Our designers create a tailored lighting plan incorporating the right mix of ambient, task, and accent lighting to achieve your goals while maximizing energy efficiency.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Detailed Proposal</h3>
+                        <p>You'll receive a comprehensive proposal including fixture selections, placement recommendations, control options, and transparent pricing for your consideration.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Professional Installation</h3>
+                        <p>Our licensed electricians carefully install all fixtures, switches, and controls according to the agreed design, ensuring all work meets electrical safety standards.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>System Setup & Programming</h3>
+                        <p>For smart lighting systems, we handle all programming, set up mobile apps, and create customized scenes and schedules to match your lifestyle.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Final Walkthrough & Education</h3>
+                        <p>We demonstrate how to use your new lighting system, answer any questions, and provide maintenance tips to ensure long-term satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Lighting Service Costs</h2>
+            <p class="section-subtitle">The cost of lighting services varies depending on several factors. While we provide customized quotes after assessment, here are the main factors that influence pricing:</p>
+            
+            <div class="pricing-factors">
+                <div class="pricing-factor">
+                    <div class="factor-icon"><i class="fas fa-home"></i></div>
+                    <h3>Project Scale</h3>
+                    <p>From single-room updates to whole-house lighting designs, the scope of your project is a primary cost factor.</p>
+                </div>
+                <div class="pricing-factor">
+                    <div class="factor-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Fixture Quality</h3>
+                    <p>The grade and brand of lighting fixtures selected significantly impact the total project cost.</p>
+                </div>
+                <div class="pricing-factor">
+                    <div class="factor-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Installation Complexity</h3>
+                    <p>New wiring, ceiling modifications, or difficult-to-access locations require additional labor and resources.</p>
+                </div>
+                <div class="pricing-factor">
+                    <div class="factor-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h3>Control Systems</h3>
+                    <p>Smart lighting systems with advanced controls cost more but offer superior convenience and efficiency.</p>
+                </div>
+                <div class="pricing-factor">
+                    <div class="factor-icon"><i class="fas fa-plug"></i></div>
+                    <h3>Electrical Updates</h3>
+                    <p>If your existing wiring needs upgrading to support new lighting, this will add to the overall cost.</p>
+                </div>
+                <div class="pricing-factor">
+                    <div class="factor-icon"><i class="fas fa-ruler-combined"></i></div>
+                    <h3>Design Services</h3>
+                    <p>Professional lighting design services ensure optimal results but represent an additional investment.</p>
+                </div>
+            </div>
+            
+            <div class="pricing-note">
+                <p>Typical lighting projects range from $150-$300 for simple fixture replacements to $1,000-$3,000+ for comprehensive lighting design and installation throughout multiple rooms. For a precise quote tailored to your specific needs, please contact us for a free consultation.</p>
+                <a href="contact.html" class="cta-button">Get Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Space with Professional Lighting?</h2>
+                <p>Contact Melbourne's lighting experts for a free consultation and quote.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+61312345678" class="cta-button"><i class="fas fa-phone-alt"></i> Call Us: 03 1234 5678</a>
+                    <a href="contact.html" class="cta-button secondary">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How much can I save by switching to LED lighting?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Switching from traditional incandescent or halogen bulbs to LED lighting typically reduces energy consumption by 70-80%. For a home with 30 light fixtures used regularly, this can translate to savings of $300-$500 annually on electricity bills.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Do I need to rewire my home for new lighting?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Not necessarily. Many modern fixtures can be installed using existing wiring. However, if you're adding new lighting locations, implementing smart systems, or if your current wiring is outdated, some rewiring may be required. We'll assess this during our initial consultation.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What's the difference between warm and cool lighting?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Light color temperature is measured in Kelvins (K). Warm white (2700K-3000K) creates a cozy, inviting atmosphere ideal for living rooms and bedrooms. Cool white (3500K-4500K) is crisp and energizing, making it suitable for kitchens, bathrooms, and workspaces. Daylight (5000K+) is the bluest, most energizing option.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Can I install smart lighting in an older home?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Yes, smart lighting can be installed in homes of any age. There are several options available, from complete smart systems requiring new wiring to simpler solutions like smart bulbs and plug-in modules that work with existing fixtures. We can recommend the best approach based on your home's electrical infrastructure.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How long do LED lights really last?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Quality LED lights typically last 15,000 to 50,000 hours, depending on the brand and usage. This translates to approximately 15-25 years of normal household use. This longevity significantly reduces maintenance and replacement costs compared to traditional lighting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote-form" class="quote-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>Request a Free Lighting Consultation</h2>
+                <p>Fill out the form below and our lighting specialists will get back to you within 30 minutes during business hours.</p>
+                <form action="submit-form.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="suburb">Suburb</label>
+                        <input type="text" id="suburb" name="suburb" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project_type">Project Type</label>
+                        <select id="project_type" name="project_type" required>
+                            <option value="">Select project type</option>
+                            <option value="interior">Interior Lighting</option>
+                            <option value="exterior">Exterior/Security Lighting</option>
+                            <option value="smart">Smart Lighting System</option>
+                            <option value="repair">Lighting Repair</option>
+                            <option value="commercial">Commercial Lighting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeline">Project Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select if known</option>
+                            <option value="urgent">As soon as possible</option>
+                            <option value="month">Within 1 month</option>
+                            <option value="planning">Planning phase/Getting quotes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Please share any specific requirements or questions about your lighting project"></textarea>
+                    </div>
+                    <div class="form-message-container"></div>
+                    <button type="submit" class="cta-button">Submit Request</button>
+                </form>
+            </div>
+            <div class="contact-info-container">
+                <h3>Need Urgent Help?</h3>
+                <div class="contact-method">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="contact-details">
+                        <h4>Call Us 24/7</h4>
+                        <a href="tel:+61312345678">03 1234 5678</a>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-details">
+                        <h4>Email Us</h4>
+                        <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a>
+                    </div>
+                </div>
+                
+                <div class="business-hours">
+                    <h4>Business Hours</h4>
+                    <p><strong>Monday - Friday:</strong> Anytime</p>
+                    <p><strong>Saturday:</strong> Anytime</p>
+                    <p><strong>Sunday:</strong> Anytime!</p>
+                    <p><strong>24/7 Emergency Service Available</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                    </div>
+                    <p>Your trusted local electricians serving all Melbourne suburbs. Available 24/7 for all your electrical needs.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="service-areas.html">Service Areas</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="lighting.html">Lighting</a></li>
+                        <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                        <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                        <li><a href="fans.html">Fans</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="gpos.html">Power</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a></li>
+                        
+                        <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Hometown Electrical. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-cta">
+        <a href="tel:+61312345678" class="floating-phone">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call Now</span>
+        </a>
+        <a href="contact.html" class="floating-quote">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Get Quote</span>
+        </a>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+    
+    (function() {
+        const isMobile = () => window.innerWidth <= 768;
+        const headerTop = document.querySelector('.header-top');
+        const logo = document.querySelector('.header-top .logo');
+        const contactInfo = document.querySelector('.header-top .contact-info');
+        const phoneContainer = document.querySelector('.header-top .phone-number');
+        const phoneText = document.querySelector('.header-top .phone-number a');
+        const burgerToggle = document.querySelector('.header-top .mobile-menu-toggle');
+        if (!headerTop || !logo) return;
+
+        let base = null; 
+        const bottomPadding = 6; 
+        const maxScroll = 160; 
+        const minScale = 1.1 
+        const baseScale = 2; 
+        const leftTarget = 12; 
+        const restMarginTop = 60; 
+        const minMarginTop = -70; 
+        const restHeaderPad = 4; 
+        const minHeaderPad = 0; 
+        const scrolledBottomExtra = 12; 
+        
+        const phonePadVBase = 8, phonePadVMin = 8; 
+        const phonePadHBase = 16, phonePadHMin = 16; 
+        const phoneFontBase = 1.1, phoneFontMin = 1.1; 
+
+        function measureBase() {
+            const headerRect = headerTop.getBoundingClientRect();
+            const logoRect = logo.getBoundingClientRect();
+            base = {
+                initialTop: logoRect.top - headerRect.top,
+                baseHeight: logo.offsetHeight,
+                initialLeft: logoRect.left - headerRect.left
+            };
+        }
+
+        let ticking = false;
+        function onScroll() {
+            if (!isMobile()) {
+                logo.style.transform = '';
+                return;
+            }
+            if (!base) measureBase();
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                const y = Math.max(0, Math.min(maxScroll, window.pageYOffset || document.documentElement.scrollTop));
+                const t = y / maxScroll; 
+                const scale = baseScale - (baseScale - minScale) * t; 
+
+                const headerH = headerTop.offsetHeight;
+                const available = Math.max(0, headerH - base.initialTop - base.baseHeight * scale - bottomPadding);
+                
+                const translateY = available * t;
+                const translateX = (leftTarget - base.initialLeft) * t; 
+
+                
+                logo.style.transform = 'translate(' + translateX + 'px,' + translateY + 'px) scale(' + scale + ')';
+
+                
+                if (contactInfo) {
+                    const mt = restMarginTop - (restMarginTop - minMarginTop) * t;
+                    contactInfo.style.marginTop = mt + 'px';
+                }
+                const pad = restHeaderPad - (restHeaderPad - minHeaderPad) * t;
+                headerTop.style.paddingTop = pad + 'px';
+                headerTop.style.paddingBottom = (pad + scrolledBottomExtra * t) + 'px';
+
+                
+                if (phoneContainer) {
+                    const pv = phonePadVBase - (phonePadVBase - phonePadVMin) * t;
+                    const ph = phonePadHBase - (phonePadHBase - phonePadHMin) * t;
+                    phoneContainer.style.padding = pv + 'px ' + ph + 'px';
+                }
+                if (phoneText) {
+                    const f = phoneFontBase - (phoneFontBase - phoneFontMin) * t;
+                    phoneText.style.fontSize = f + 'rem';
+                }
+
+                
+                const h = headerTop.getBoundingClientRect().height;
+                document.body.style.paddingTop = h + 'px';
+                document.documentElement.style.setProperty('--headerHeight', h + 'px');
+
+                
+                if (burgerToggle && phoneContainer) {
+                    const hr = headerTop.getBoundingClientRect();
+                    const pr = phoneContainer.getBoundingClientRect();
+                    const gap = Math.max(6, hr.bottom - pr.bottom); 
+                    burgerToggle.style.bottom = gap + 'px';
+                }
+                ticking = false;
+            });
+        }
+
+        function onResize() {
+            logo.style.transform = '';
+            base = null;
+            if (isMobile()) {
+                measureBase();
+                
+                document.body.style.paddingTop = headerTop.offsetHeight + 'px';
+            } else {
+                document.body.style.paddingTop = '';
+            }
+            onScroll();
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onResize);
+        window.addEventListener('orientationchange', onResize);
+
+        
+        onResize();
+    })();
+    </script>
+</body>
+</html> 

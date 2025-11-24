@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Hometown Electrical - Serving Every Corner of Melbourne</title>
+    <meta name="description" content="Discover Hometown Electrical - your local electrical experts serving CBD, Richmond, Brunswick, St Kilda, Hawthorn, Footscray and all Melbourne suburbs. Learn our story across Melbourne's diverse communities.">
+    <meta name="keywords" content="Melbourne electricians, local electricians CBD, Richmond electricians, Brunswick electrical services, St Kilda electricians, Hawthorn electrical work">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <meta property="og:title" content="About Us | Hometown Electrical - Serving Every Melbourne Suburb">
+    <meta property="og:description" content="From Carlton to Brighton, Footscray to Kew - discover how Hometown Electrical serves every corner of Melbourne.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://melbourneelectricians.com.au/">
+    
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, rgba(13, 46, 76, 0.9), rgba(46, 125, 183, 0.95)), url('images/Electrician-Van.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 30px 0;
+            min-height: 30vh;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 183, 0, 0.1) 50%, transparent 60%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero .subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-stats .stat {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stats .stat strong {
+            display: block;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .hero-stats .stat span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                min-height: 35vh;
+                padding: 25px 0;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .hero-stats .stat {
+                padding: 15px 25px;
+            }
+        }
+
+        .melbourne-map-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--light-color), white);
+            position: relative;
+        }
+
+        .map-story-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .story-content h2 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .story-content h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+        }
+
+        .melbourne-visual {
+            position: relative;
+            padding: 40px;
+        }
+
+        .melbourne-circle {
+            width: 400px;
+            height: 400px;
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(255, 183, 0, 0.1), rgba(13, 46, 76, 0.1));
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .suburb-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .suburb-dot:hover {
+            transform: scale(1.5);
+            background: var(--primary-color);
+        }
+
+        .suburb-dot::after {
+            content: attr(data-suburb);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .suburb-dot:hover::after {
+            opacity: 1;
+        }
+
+        
+        .dot-cbd { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .dot-richmond { top: 60%; right: 20%; }
+        .dot-brunswick { top: 20%; left: 40%; }
+        .dot-fitzroy { top: 30%; right: 30%; }
+        .dot-carlton { top: 35%; left: 50%; }
+        .dot-st-kilda { bottom: 20%; left: 40%; }
+        .dot-footscray { top: 50%; left: 10%; }
+        .dot-hawthorn { bottom: 30%; right: 15%; }
+        .dot-kew { top: 25%; right: 20%; }
+        .dot-brighton { bottom: 10%; right: 40%; }
+
+        .areas-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .area-story-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .area-story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .area-story-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .area-story-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .area-story-card .area-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .timeline-section {
+            padding: 80px 0;
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin: 0 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: 4px solid white;
+        }
+
+        .local-knowledge {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--light-color), white);
+        }
+
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .knowledge-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .knowledge-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 183, 0, 0.1), transparent);
+            transition: transform 0.6s ease;
+            transform: rotate(-45deg) translate(-100%, -100%);
+        }
+
+        .knowledge-card:hover::before {
+            transform: rotate(-45deg) translate(100%, 100%);
+        }
+
+        .knowledge-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .knowledge-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .map-story-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .melbourne-circle {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .timeline-item {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            
+            .timeline-content {
+                margin: 20px 0;
+            }
+            
+            .timeline-line {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="internal">
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                    </a>
+                </div>
+                <div class="mobile-menu-toggle" aria-label="Toggle mobile menu" role="button" tabindex="0">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="contact-info">
+                    <div class="phone-number">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+61312345678">03 1234 5678</a>
+                    </div>
+                    <a href="contact.html" class="cta-button">Get Quote</a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="lighting.html">Lighting</a></li>
+                            <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                            <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                            <li><a href="fans.html">Fans</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="gpos.html">Power</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="service-areas.html">Service Areas</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <div class="container">
+            <h1>Honest. Reliable. Local. Expert.</h1>
+            <p class="subtitle">For over 15 years, we've built our reputation one job at a time - from emergency repairs in Richmond to new installations in Brighton, from heritage home upgrades in Carlton to commercial projects in Docklands. We're the electricians Melbourne trusts.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong>100%</strong>
+                    <span>Satisfaction Guarantee</span>
+                </div>
+                <div class="stat">
+                    <strong>24/7</strong>
+                    <span>Emergency Response</span>
+                </div>
+                <div class="stat">
+                    <strong>15+</strong>
+                    <span>Years Building Trust</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="melbourne-map-section">
+        <div class="container">
+            <div class="map-story-container">
+                <div class="story-content">
+                    <h2>Built on Trust, Powered by Expertise</h2>
+                    <p>What started in 2008 with one electrician and a van has grown into Melbourne's most trusted electrical team. Not because we're the biggest, but because we've never forgotten the values that matter: showing up when we say we will, doing the job right the first time, and treating every customer's home in Hawthorn or office in Collins Street like it's our own.</p>
+                    
+                    <p>Our founder, Michael, started after being frustrated with unreliable contractors. "I wanted to build a company where customers in Fitzroy get the same honest service as those in Toorak," he says. Today, whether it's Mrs. Chen in Box Hill needing emergency repairs or the new café in Brunswick requiring complete rewiring, our commitment remains unchanged.</p>
+                    
+                    <p><strong>We're not just electricians serving Melbourne - we're Melbourne locals who happen to be expert electricians.</strong></p>
+                </div>
+                
+                
+            </div>
+
+            <div class="areas-showcase">
+                <div class="area-story-card">
+                    <h3><span class="area-icon"><i class="fas fa-handshake"></i></span>Honest & Transparent Pricing</h3>
+                    <p>No surprises, no hidden fees. Whether you're in Prahran or Preston, Kew or Keilor, you'll know the cost upfront. Our customer Sarah from Camberwell said: "Finally, an electrician who quotes what they actually charge!" We believe honest pricing builds lasting relationships across every Melbourne suburb.</p>
+                </div>
+
+                <div class="area-story-card">
+                    <h3><span class="area-icon"><i class="fas fa-clock"></i></span>Reliable When You Need Us</h3>
+                    <p>When we say 2pm, we mean 2pm - whether that's in Carlton or Caroline Springs. Our punctuality is legendary from Northcote to Narre Warren. Emergency at midnight in St Kilda? We're there. Scheduled maintenance in Malvern? On time, every time. Reliability isn't just our promise, it's our reputation.</p>
+                </div>
+
+                <div class="area-story-card">
+                    <h3><span class="area-icon"><i class="fas fa-home"></i></span>Local Knowledge That Matters</h3>
+                    <p>We understand that heritage homes in Fitzroy need different approaches than new builds in Point Cook. Our team knows the quirks of 1940s wiring in Richmond, the challenges of apartment living in Docklands, and the specific needs of family homes in Glen Waverley. Local knowledge makes all the difference.</p>
+                </div>
+
+                <div class="area-story-card">
+                    <h3><span class="area-icon"><i class="fas fa-award"></i></span>Expert Craftsmanship</h3>
+                    <p>Fully licensed, insured, and continuously trained. From complex commercial installations in Southbank to intricate heritage restorations in Hawthorn, our expertise shows in every job. We're the electricians other tradespeople in Brunswick recommend to their own families in Brighton.</p>
+                </div>
+
+                <div class="area-story-card">
+                    <h3><span class="area-icon"><i class="fas fa-users"></i></span>Community-Focused Service</h3>
+                    <p>We're not a faceless corporation. We sponsor local football clubs in Footscray, support school events in Balwyn, and our kids play at the same parks in Albert Park. When you call us to your home in Yarraville or business in Windsor, you're supporting a local Melbourne family business.</p>
+                </div>
+
+                <div class="area-story-card">
+                    <h3><span class="area-icon"><i class="fas fa-phone"></i></span>Always Available When It Matters</h3>
+                    <p>Electrical emergencies don't keep business hours. Whether it's a power outage in Essendon at 3am or a safety issue in Sandringham on Sunday, our emergency team is ready. We've restored power to family dinners in Thornbury and kept businesses running in Collins Street - because we understand what matters to Melbourne.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; color: white; margin-bottom: 60px;">Our Story of Trust & Growth</h2>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-content">
+                        <h3>Humble Beginnings in Richmond</h3>
+                        <p>Michael started with one principle: treat every customer fairly while doing the work he loves.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">
+                        <h3>Building a Team of Local Experts</h3>
+                        <p>Sarah joined from Fitzroy, bringing her expertise in heritage electrical work. David from Carlton specialized in emergency response. Together, they expanded our reputation for reliability across Brunswick, Collingwood, and beyond. Quality work speaks louder than advertising.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <h3>Earned Trust Across Melbourne</h3>
+                        <p>Our reputation for honest pricing and expert work spread from Kew to St Kilda, Footscray to Brighton. Customers started calling us "the reliable ones" - whether it was office buildings in Melbourne CBD or family homes in Hawthorn, we delivered on our promises every time.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-content">
+                        <h3>Innovation Meets Tradition</h3>
+                        <p>We embraced smart home technology while preserving traditional craftsmanship. Installing cutting-edge systems in Docklands apartments and upgrading heritage homes in Armadale with modern safety standards. Innovation guided by expertise, reliability you can count on.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3>Melbourne's Most Trusted Electricians</h3>
+                        <p>Today, we're the electricians Melbourne calls first. From Craigieburn to Frankston, Werribee to Ringwood, our reputation for honest service, reliable timing, and expert workmanship has made us the trusted choice for thousands of Melbourne families and businesses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section" style="padding: 80px 0; background: var(--light-color);">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">What Melbourne Says About Us</h2>
+            <div class="knowledge-grid">
+                <div class="knowledge-card">
+                    <div class="knowledge-icon"><i class="fas fa-quote-left"></i></div>
+                    <h3>The Chen Family - Box Hill</h3>
+                    <p>"Called them for an emergency on Sunday night - power completely out with two young kids. Michael arrived within 30 minutes, fixed the issue quickly, and charged exactly what he quoted over the phone. Honest, reliable, and clearly expert at what they do."</p>
+                </div>
+
+                <div class="knowledge-card">
+                    <div class="knowledge-icon"><i class="fas fa-quote-left"></i></div>
+                    <h3>Brunswick Coffee Co.</h3>
+                    <p>"Sarah completely rewired our heritage building while preserving all the character features we loved. Professional, on time every day, and the end result is better than we imagined. They're now our go-to for all three of our Melbourne locations."</p>
+                </div>
+
+                <div class="knowledge-card">
+                    <div class="knowledge-icon"><i class="fas fa-quote-left"></i></div>
+                    <h3>Margaret - St Kilda</h3>
+                    <p>"David upgraded my entire switchboard and explained everything clearly. No pressure to buy extras, honest pricing, and cleaned up perfectly afterward. Finally found electricians I can trust completely. Already recommended them to my neighbors."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-areas-section" style="padding: 80px 0; background: var(--secondary-color); color: white;">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; color: white; margin-bottom: 40px;">Proudly Serving All Melbourne Suburbs</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 60px; opacity: 0.9;">From heritage homes to modern apartments, family businesses to corporate offices - we bring the same honest, reliable, expert service to every corner of Melbourne.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">Inner Melbourne</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">Carlton • Fitzroy • Richmond • Collingwood • Abbotsford • Brunswick • Northcote • Thornbury • Preston • Parkville • North Melbourne • West Melbourne • East Melbourne • Southbank</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">Eastern Suburbs</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">Hawthorn • Kew • Camberwell • Canterbury • Balwyn • Deepdene • Mont Albert • Box Hill • Doncaster • Templestowe • Ashburton • Glen Iris • Malvern • Armadale • Toorak • South Yarra • Prahran</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">Western Suburbs</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">Footscray • Yarraville • Seddon • Williamstown • Altona • Sunshine • Maribyrnong • Essendon • Moonee Ponds • Ascot Vale • Keilor • St Albans • Werribee • Point Cook • Caroline Springs</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">Bayside & South</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">St Kilda • Brighton • Elwood • Port Melbourne • Albert Park • Middle Park • South Melbourne • Caulfield • Bentleigh • Moorabbin • Hampton • Sandringham • Beaumaris • Mentone • Frankston</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">Northern Areas</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">Brunswick • Coburg • Reservoir • Heidelberg • Ivanhoe • Bundoora • Mill Park • Craigieburn • Broadmeadows • Tullamarine • Airport West • Pascoe Vale • Oak Park</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">Outer Areas</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">Glen Waverley • Oakleigh • Dandenong • Berwick • Pakenham • Cranbourne • Ringwood • Croydon • Lilydale • Belgrave • Melton • Sunbury • Wallan • Whittlesea</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Require Some Electrical Work Completed?</h2>
+                <p>Whether you're in the heart of the CBD or the outer suburbs, we're your local Melbourne electricians. We understand your suburb, your needs, and your community.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+61312345678" class="cta-button"><i class="fas fa-phone-alt"></i> Call the Hometown Electrica Team Now!</a>
+                    <a href="contact.html" class="cta-button secondary"><i class="fas fa-map-marker-alt"></i> Find Your Local Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                    </div>
+                    <p>Your trusted local electricians serving all Melbourne suburbs. Available 24/7 for all your electrical needs.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="service-areas.html">Service Areas</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="lighting.html">Lighting</a></li>
+                        <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                        <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                        <li><a href="fans.html">Fans</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="gpos.html">Power</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a></li>
+                        
+                        <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Hometown Electrical. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-cta">
+        <a href="tel:+61312345678" class="floating-phone">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call Now</span>
+        </a>
+        <a href="contact.html" class="floating-quote">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Get Quote</span>
+        </a>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .knowledge-card, .area-story-card').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
+ 

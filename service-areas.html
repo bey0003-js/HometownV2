@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Areas - Electrical Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .service-areas-hero {
+            background: linear-gradient(rgba(13, 46, 76, 0.85), rgba(13, 46, 76, 0.95)), url('images/service-areas-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 30px 0;
+            min-height: 30vh;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .map-section {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--light-color);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .area-card {
+            background-color: var(--white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .area-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+        }
+
+        .area-card h3 i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .area-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .area-card ul li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .area-card ul li:before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .coverage-note {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: var(--spacing-lg);
+        }
+
+        .coverage-note p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .map-container {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
+        }
+        
+        .footer-column.company-info {
+            grid-column: span 1;
+        }
+        
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links li, .contact-list li {
+            margin-bottom: 12px;
+        }
+        
+        .contact-list li i {
+            color: var(--primary-color);
+            width: 20px;
+            margin-right: 8px;
+        }
+        
+        .contact-list li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-list li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: var(--spacing-md);
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 991px) {
+            .footer-columns {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-column.company-info {
+                grid-column: span 2;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-columns {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+            
+            .footer-column.company-info {
+                grid-column: span 1;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-bottom-links {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body class="internal">
+    
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Electrical Services Logo">
+                    </a>
+                </div>
+                <div class="mobile-menu-toggle" aria-label="Toggle mobile menu" role="button" tabindex="0">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="contact-info">
+                    <div class="phone-number">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:0400123456">0400 123 456</a>
+                    </div>
+                    <a href="contact.html" class="cta-button">Get Quote</a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="lighting.html">Lighting</a></li>
+                            <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                            <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                            <li><a href="fans.html">Fans</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="gpos.html">Power</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="service-areas.html" class="active">Service Areas</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+    <section class="service-areas-hero">
+        <div class="container">
+            <h1>Our Service Areas</h1>
+            <p>Providing professional electrical services throughout Melbourne, Geelong and surrounding areas</p>
+        </div>
+    </section>
+
+    
+    <section class="map-section">
+        <div class="container">
+            <h2>Service Locations</h2>
+            <p>We proudly serve the following Melbourne areas with our professional electrical services:</p>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1640937.1258281504!2d143.6317348611869!3d-38.00461855590253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad64cd4fb9c9837%3A0x4fa8e21316d386e4!2sMelbourne%20Metropolitan%20Area%20and%20Geelong!5e0!3m2!1sen!2sau!4v1647890123456!5m2!1sen!2sau" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Melbourne CBD</h3>
+                    <ul>
+                        <li>Melbourne City</li>
+                        <li>Southbank</li>
+                        <li>Docklands</li>
+                        <li>Carlton</li>
+                        <li>North Melbourne</li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Inner East</h3>
+                    <ul>
+                        <li>Richmond</li>
+                        <li>Hawthorn</li>
+                        <li>Kew</li>
+                        <li>Camberwell</li>
+                        <li>Dandenong</li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Inner West</h3>
+                    <ul>
+                        <li>Footscray</li>
+                        <li>Derrimut</li>
+                        <li>Williamstown</li>
+                        <li>Altona</li>
+                        <li>Werribee</li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Inner North</h3>
+                    <ul>
+                        <li>Brunswick</li>
+                        <li>Fitzroy</li>
+                        <li>Northcote</li>
+                        <li>Preston</li>
+                        <li>Coburg</li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Inner South</h3>
+                    <ul>
+                        <li>South Yarra</li>
+                        <li>Prahran</li>
+                        <li>St Kilda</li>
+                        <li>Brighton</li>
+                        <li>Elwood</li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Western Region</h3>
+                    <ul>
+                        <li>Melton</li>
+                        <li>Bacchus Marsh</li>
+                        <li>Geelong</li>
+                        <li>Lara</li>
+                        <li>Corio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="coverage-note">
+                <p>Don't see your area listed? Contact us to check if we service your location!</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                    </div>
+                    <p>Your trusted local electricians serving all Melbourne suburbs. Available 24/7 for all your electrical needs.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="service-areas.html">Service Areas</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="lighting.html">Lighting</a></li>
+                        <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                        <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                        <li><a href="fans.html">Fans</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="gpos.html">Power</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a></li>
+                        
+                        <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Hometown Electrical. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Point Installation & Repair Services - Hometown Electrical</title>
+    <meta name="description" content="Professional power point installation, repair and upgrade services in Melbourne. Safe, reliable power outlet solutions for your home or business.">
+    <meta name="keywords" content="power points, electrical outlets, installation, repair, upgrade, Melbourne electrician">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .power-hero {
+            background: linear-gradient(rgba(13, 46, 76, 0.7), rgba(13, 46, 76, 0.8)), url('images/Home-GPO.jpg');
+            background-size: cover; 
+            background-position: center center;
+            min-height: 30vh; 
+            padding: 30px 0;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center; 
+        }
+        .power-hero h1 { color: var(--white); }
+        @media (max-width: 768px) {
+            .power-hero {
+                min-height: 35vh;
+                padding: 25px 0;
+            }
+        }
+        
+        .power-stats {
+            background-color: var(--primary-color);
+            padding: var(--spacing-lg) 0;
+            color: var(--secondary-color);
+        }
+
+        .stats-wrapper {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat-block {
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            color: var(--secondary-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            margin-top: 5px;
+            color: var(--secondary-color);
+        }
+
+        .services-showcase {
+            padding: var(--spacing-xl) 0;
+            background: var(--light-color);
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .showcase-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-color);
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .showcase-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), #e6a100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .two-column-layout {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .warning-signs {
+            background: 
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .warning-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .warning-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid 
+            display: flex;
+            align-items: center;
+        }
+
+        .warning-list li:last-child {
+            border-bottom: none;
+        }
+
+        .warning-list li i {
+            color: var(--accent-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .installation-benefits {
+            background: var(--secondary-color);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits-list li {
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefits-list li i {
+            color: var(--primary-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .process-timeline {
+            padding: var(--spacing-xl) 0;
+            background: linear-gradient(135deg, var(--light-color), white);
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: calc(50% + 30px);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: calc(50% + 30px);
+            text-align: left;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-weight: bold;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .pricing-cards {
+            padding: var(--spacing-xl) 0;
+            background: white;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid 
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .price-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .price-header {
+            margin-bottom: 25px;
+        }
+
+        .price-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 991px) {
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin: 0 60px 0 0;
+                text-align: left;
+            }
+            
+            .timeline-marker {
+                left: 20px;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body class="internal">
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                    </a>
+                </div>
+                <div class="mobile-menu-toggle" aria-label="Toggle mobile menu" role="button" tabindex="0">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="contact-info">
+                    <div class="phone-number">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+61312345678">03 1234 5678</a>
+                    </div>
+                    <a href="contact.html" class="cta-button">Get Quote</a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="lighting.html">Lighting</a></li>
+                            <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                            <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                            <li><a href="fans.html">Fans</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="gpos.html" class="active">Power</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="service-areas.html">Service Areas</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="power-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1>Professional Power Point Services</h1>
+                <p>Safe, reliable power point installation, repair and upgrade services across Melbourne. Licensed electricians ensuring compliance with Australian standards.</p>
+                <div class="hero-buttons">
+                    <a href="tel:+61312345678" class="cta-button"><i class="fas fa-phone-alt"></i> Call Now</a>
+                    <a href="contact.html" class="cta-button secondary">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="power-stats">
+        <div class="container">
+            <div class="stats-wrapper">
+                <div class="stat-block">
+                    <div class="stat-number">2,500+</div>
+                    <span class="stat-label">Power Points Installed</span>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-number">15+</div>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-number">100%</div>
+                    <span class="stat-label">Safety Compliant</span>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-number">24/7</div>
+                    <span class="stat-label">Emergency Service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-overview">
+        <div class="container">
+            <h2 class="section-title">Our Power Point Services</h2>
+            <div class="services-cards">
+                <div class="service-box">
+                    <div class="service-box-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h3>New Installation</h3>
+                    <p>Professional installation of new power points in homes and businesses with full compliance certification.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-box-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Repair & Maintenance</h3>
+                    <p>Quick diagnosis and repair of faulty power points, loose connections, and electrical safety issues.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-box-icon">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <h3>Upgrades</h3>
+                    <p>Upgrade old outlets to modern safety standards including USB power points and safety switches.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-box-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Outdoor Installation</h3>
+                    <p>Outdoor and wet-area power point installation with appropriate IP ratings for safety and durability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signs-section">
+        <div class="container">
+            <div class="two-column-grid">
+                <div class="signs-content">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Warning Signs You Need Power Point Service</h3>
+                    <div class="signs-grid">
+                        <div class="sign-card">
+                            <div class="icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3>Sparking Outlets</h3>
+                            <p>Visible sparks when plugging in or unplugging devices indicate dangerous electrical faults.</p>
+                        </div>
+                        <div class="sign-card">
+                            <div class="icon">
+                                <i class="fas fa-thermometer-half"></i>
+                            </div>
+                            <h3>Hot Outlets</h3>
+                            <p>Warm or hot outlets suggest overloading or faulty wiring that needs immediate attention.</p>
+                        </div>
+                        <div class="sign-card">
+                            <div class="icon">
+                                <i class="fas fa-power-off"></i>
+                            </div>
+                            <h3>Loose Connections</h3>
+                            <p>Plugs falling out or loose outlets indicate worn components requiring replacement.</p>
+                        </div>
+                        <div class="sign-card">
+                            <div class="icon">
+                                <i class="fas fa-burn"></i>
+                            </div>
+                            <h3>Burn Marks</h3>
+                            <p>Discoloration or burn marks around outlets signal serious electrical problems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="regulations-image">
+                    <img src="images/Outside-GPO.jpg" alt="Outside Power Point Installation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How many power points can be on one circuit?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>According to Australian standards, up to 10 power points can be connected to a single 20-amp circuit. However, the actual number depends on the expected load and usage patterns.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Can I install power points myself?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>No, power point installation must be performed by a licensed electrician in Australia. DIY electrical work is illegal and dangerous, potentially causing fires or electrocution.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How long does power point installation take?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Simple power point installation typically takes 1-2 hours per outlet. Complex installations requiring new circuits may take longer depending on accessibility and requirements.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Do you provide warranty on power point work?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Yes, we provide a comprehensive 2-year warranty on all power point installation and repair work, covering both materials and workmanship for your peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need a Power Point Installation or Repair?</h2>
+                <p>Don't compromise on electrical safety. Our licensed electricians provide reliable, compliant power point services across Melbourne.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+61312345678" class="cta-button"><i class="fas fa-phone-alt"></i> Call Now</a>
+                    <a href="contact.html" class="cta-button secondary">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote-form" class="assessment-form">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Get Your Free* Power Point Quote</h2>
+                    <p>Fill out the form below for a personalized quote on your power point installation or repair needs.</p>
+                </div>
+                <form action="submit-form.php" method="POST">
+                    <div class="form-columns">
+                        <div class="form-column">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="suburb">Suburb</label>
+                                <input type="text" id="suburb" name="suburb" required>
+                            </div>
+                        </div>
+                        <div class="form-column">
+                            <div class="form-group">
+                                <label for="service-type">Service Type</label>
+                                <select id="service-type" name="service-type" required>
+                                    <option value="">Select service type</option>
+                                    <option value="new-installation">New Power Point Installation</option>
+                                    <option value="repair">Power Point Repair</option>
+                                    <option value="upgrade">Power Point Upgrade</option>
+                                    <option value="relocation">Power Point Relocation</option>
+                                    <option value="outdoor">Outdoor Installation</option>
+                                    <option value="usb">USB Power Points</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="property-type">Property Type</label>
+                                <select id="property-type" name="property-type" required>
+                                    <option value="">Select property type</option>
+                                    <option value="residential">Residential</option>
+                                    <option value="commercial">Commercial</option>
+                                    <option value="industrial">Industrial</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Please describe your power point requirements, number of outlets needed, and any specific details..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <button type="submit" class="cta-button">Get Free Quote</button>
+                        <p class="form-disclaimer">
+                            We'll respond within 30 minutes during business hours. All quotes are free with no obligation.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                    </div>
+                    <p>Your trusted local electricians serving all Melbourne suburbs. Available 24/7 for all your electrical needs.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="service-areas.html">Service Areas</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="lighting.html">Lighting</a></li>
+                        <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                        <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                        <li><a href="fans.html">Fans</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="gpos.html">Power</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@melbourneelectricians.com.au">service@melbourneelectricians.com.au</a></li>
+                        
+                        <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Hometown Electrical. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-cta">
+        <a href="tel:+61312345678" class="floating-phone">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call Now</span>
+        </a>
+        <a href="contact.html" class="floating-quote">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Get Quote</span>
+        </a>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

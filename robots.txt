@@ -1,0 +1,9 @@
+# Hometown Electrical Website Robots.txt
+# Version 1.0
+
+User-agent: *
+Allow: /
+Disallow: /submit-form.php
+
+# Sitemaps
+Sitemap: https://melbourneelectricians.com.au/sitemap.xml 
