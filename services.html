@@ -17,6 +17,8 @@
     <meta property="og:image" content="images/og-image.jpg">
     <meta property="og:url" content="https://hometownelectrical.com.au/">
     <link rel="canonical" href="https://hometownelectrical.com.au/services.html">
+    <link rel="icon" type="image/png" href="images/logo-flavicon.png">
+    <link rel="apple-touch-icon" href="images/logo-flavicon.png">
     
     <style>
         .services-hero {
@@ -24,7 +26,7 @@
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 120px 0 80px;
+            padding: 70px 0 0;
             text-align: center;
         }
 
@@ -175,31 +177,61 @@
         }
 
         .quick-nav {
-            background-color: var(--secondary-color);
-            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .quick-nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
             margin: 0;
             padding: 0;
         }
 
         .quick-nav ul li a {
-            color: var(--white);
+            display: inline-block;
+            color: #fff;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 25px;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
         }
 
         .quick-nav ul li a:hover {
-            color: var(--primary-color);
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            border-color: var(--primary-color);
+        }
+
+        .quick-nav.is-stuck {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            border-top: none;
+        }
+
+        .quick-nav.is-stuck ul li a {
+            color: var(--secondary-color);
+            border-color: rgba(13, 46, 76, 0.25);
+        }
+
+        .quick-nav.is-stuck ul li a:hover {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            border-color: var(--primary-color);
         }
         
 
@@ -219,9 +251,15 @@
             }
 
             .quick-nav ul {
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: row;
+                justify-content: center;
+                gap: 8px;
                 text-align: center;
+            }
+
+            .quick-nav ul li a {
+                padding: 6px 14px;
+                font-size: 0.9rem;
             }
 
             .service-image img {
@@ -285,20 +323,19 @@
             <h1>Our Electrical Services</h1>
             <p class="subtitle">Complete electrical solutions for homes and businesses across Melbourne</p>
         </div>
-    </section>
-
-    <div class="quick-nav">
-        <div class="container">
-            <ul>
-                <li><a href="#emergency">Emergency</a></li>
-                <li><a href="#installations">Installations</a></li>
-                <li><a href="#commercial">Commercial</a></li>
-                <li><a href="#residential">Residential</a></li>
-                <li><a href="#lighting">Lighting</a></li>
-                <li><a href="#safety">Safety</a></li>
-            </ul>
+        <div class="quick-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#emergency">Emergency</a></li>
+                    <li><a href="#installations">Installations</a></li>
+                    <li><a href="#commercial">Commercial</a></li>
+                    <li><a href="#residential">Residential</a></li>
+                    <li><a href="#lighting">Lighting</a></li>
+                    <li><a href="#safety">Safety</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </section>
 
     <section id="emergency" class="service-section">
         <div class="container">
@@ -689,7 +726,7 @@
                     <div class="social-icons">
                         <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/hometown_electrical/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
@@ -747,6 +784,19 @@
         </a>
     </div>
 
+    <script>
+        (function() {
+            var quickNav = document.querySelector('.quick-nav');
+            var hero = document.querySelector('.services-hero');
+            if (!quickNav || !hero) return;
+            function checkStuck() {
+                var heroBottom = hero.offsetTop + hero.offsetHeight;
+                quickNav.classList.toggle('is-stuck', window.scrollY + 10 > heroBottom);
+            }
+            window.addEventListener('scroll', checkStuck);
+            checkStuck();
+        })();
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html> 

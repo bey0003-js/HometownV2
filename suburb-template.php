@@ -68,7 +68,8 @@ $meta_description = "Licensed electrician in $suburb VIC. Available 24/7 for eme
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles-marketing.css">
     <link rel="stylesheet" href="https:
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="images/logo-flavicon.png">
+    <link rel="apple-touch-icon" href="images/logo-flavicon.png">
     
     
     <script type="application/ld+json">

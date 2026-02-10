@@ -220,6 +220,10 @@ header {
     align-items: center;
 }
 
+body.internal .header-top .container {
+    padding-top: 8px;
+}
+
 .logo {
     max-width: 320px; 
     height: auto;
@@ -908,6 +912,42 @@ nav .container {
 
 .form-container p {
     margin-bottom: var(--spacing-md);
+}
+
+.form-container.form-success {
+    background: #28a745;
+    color: white;
+    text-align: center;
+    padding: 50px var(--spacing-lg);
+}
+
+.form-success-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-success-icon {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.form-success-icon i {
+    color: white;
+}
+
+.form-success-state h2 {
+    color: white !important;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.form-success-state p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    margin: 0;
 }
 
 .form-group {

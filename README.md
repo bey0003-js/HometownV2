@@ -50,7 +50,7 @@ A professional, modern website for an electrical services business based in Melb
    - `images/` directory with:
      - `logo2.png` (your company logo)
      - `logo-white.png` (white version for footer)
-     - `favicon.png` (site icon)
+     - `logo-flavicon.png` (site icon)
      - `og-image.jpg` (image for social sharing)
      - `hero-bg.jpg` (background image for hero section)
      - Service images (emergency-repairs.jpg, installations.jpg, etc.)

@@ -138,9 +138,10 @@ header {
 }
 
 @media (min-width: 769px) {
-    .home-page header {
+    .home-page header,
+    body.suburb-page header {
         position: fixed;
-        top: 40px;
+        top: var(--em-banner-height, 40px);
         left: 0;
         right: 0;
         z-index: 1000;
@@ -793,7 +794,7 @@ nav .container {
 }
 
 .hero-content h1 .hero-subheading {
-    font-size: 0.5em;
+    font-size: 0.45em;
     font-weight: 700;
     color: var(--primary-color);
     display: block;
@@ -810,7 +811,7 @@ nav .container {
 
 .hero-subtitle p {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     margin-bottom: 30px;
 }
 
@@ -1148,9 +1149,12 @@ nav .container {
     font-size: 1.8rem;
 }
 
-.problem-card h3 {
+.problem-card .title-style {
     color: var(--secondary-color);
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .problem-card p {
@@ -1173,7 +1177,7 @@ nav .container {
     text-align: center;
     width: 100%;
     max-width: 100%;
-    margin: 0;
+    margin: 0 0 2.5rem 0;
     position: relative;
     left: 0;
     right: 0;
@@ -1937,10 +1941,12 @@ nav .container {
     border: 2px solid #cccccc;
 }
 
-.comparison-card h3 {
+.comparison-card .title-style {
     color: var(--secondary-color);
     margin-bottom: 20px;
     font-size: 1.5rem;
+    font-family: var(--heading-font);
+    font-weight: 700;
 }
 
 .comparison-list {
@@ -1991,9 +1997,12 @@ nav .container {
     font-size: 2.5rem;
 }
 
-.guarantee-content h3 {
+.guarantee-content .title-style {
     color: var(--secondary-color);
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .guarantee-content p {
@@ -2286,7 +2295,7 @@ nav .container {
     }
     
     .hero-subtitle p {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
         max-width: 100%;
         margin: 0 0 30px 0;
     }
@@ -2999,6 +3008,83 @@ footer {
     transition: height 0.3s ease;
 }
 
+/* Promo Section (between reviews and service areas) */
+.promo-section {
+    padding: 3rem 0;
+    background: #ffffff;
+}
+
+.promo-section .section-title {
+    color: var(--secondary-color);
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.brand-slot {
+    aspect-ratio: 2 / 1;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.brand-slot img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.brand-slot img[src=""] {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .promo-section {
+        padding: 1.5rem 0;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .brand-slot {
+        min-height: 60px;
+        padding: 0.35rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .promo-section {
+        padding: 1rem 0;
+    }
+
+    .promo-section .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .brand-slot {
+        min-height: 50px;
+        padding: 0.25rem;
+    }
+}
+
 /* Service Areas Section */
 .service-areas {
     padding: 2.5rem 0;
@@ -3027,6 +3113,10 @@ footer {
     opacity: 1;
 }
 
+.service-areas .section-title {
+    color: var(--primary-color);
+}
+
 .service-areas .section-subtitle {
     color: #fff;
 }
@@ -3036,6 +3126,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
     margin-bottom: 40px;
+    align-items: stretch;
 }
 
 .area-column {
@@ -3044,6 +3135,9 @@ footer {
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
 }
 
 .area-column:hover {
@@ -3051,7 +3145,7 @@ footer {
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-.area-column h3 {
+.area-column .title-style {
     color: var(--secondary-color);
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -3060,9 +3154,11 @@ footer {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-family: var(--heading-font);
+    font-weight: 700;
 }
 
-.area-column h3 i {
+.area-column .title-style i {
     color: var(--primary-color);
     font-size: 1.1em;
 }
@@ -3170,6 +3266,42 @@ button.cta-button {
     margin-bottom: 30px;
 }
 
+.form-container.form-success {
+    background: #28a745;
+    color: white;
+    text-align: center;
+    padding: 50px 40px;
+}
+
+.form-success-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-success-icon {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.form-success-icon i {
+    color: white;
+}
+
+.form-success-state h2 {
+    color: white !important;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.form-success-state p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
 .form-group {
     margin-bottom: 20px;
 }
@@ -3235,10 +3367,11 @@ button.cta-button {
     box-shadow: 0 20px 60px rgba(13, 46, 76, 0.25);
     position: sticky;
     top: 100px;
+    color: var(--secondary-color);
 }
 
 .contact-info-container h3 {
-    color: var(--secondary-color);
+    color: var(--secondary-color) !important;
     font-size: 2.2rem;
     margin-bottom: 25px;
 }
@@ -3257,21 +3390,29 @@ button.cta-button {
     flex-shrink: 0;
 }
 
-.contact-details h4 {
-    color: var(--secondary-color);
+.contact-info-container .contact-details h4 {
+    color: var(--secondary-color) !important;
     font-size: 1.5rem;
     margin-bottom: 8px;
 }
 
-.contact-details a {
-    color: var(--primary-color);
+.contact-info-container .contact-method .contact-details a {
+    color: var(--primary-color) !important;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.3rem;
     transition: color 0.3s;
 }
 
-.contact-details a:hover {
+.contact-info-container .contact-method .contact-details a:hover {
+    color: var(--secondary-color) !important;
+}
+
+.contact-info-container .business-hours h4 {
+    color: var(--secondary-color) !important;
+}
+
+.contact-info-container .business-hours p {
     color: var(--secondary-color);
 }
 
@@ -3414,10 +3555,10 @@ button.cta-button {
     
     .form-container,
     .contact-info-container {
-        margin: 0;
-        padding: 25px;
+        margin: 0 auto;
+        padding: 25px 20px;
         width: 100%;
-        max-width: 100%;
+        max-width: 380px;
         box-sizing: border-box;
     }
 
@@ -3477,16 +3618,17 @@ button.cta-button {
     }
 
     .form-container {
-        max-width: 360px;
+        max-width: 300px;
         width: 100%;
-        margin: 0 auto 0 0;
+        margin: 0 auto;
+        padding: 20px 16px;
     }
 
     .contact-info-container {
-        max-width: 360px;
+        max-width: 300px;
         width: 100%;
-        margin: 0 auto 0 0;
-        padding: 20px;
+        margin: 0 auto;
+        padding: 20px 16px;
     }
 }
 

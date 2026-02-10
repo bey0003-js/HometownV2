@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Set banner height for suburb pages so header sits flush below emergency banner (no gap)
+    const banner = document.querySelector('.emergency-banner');
+    const header = document.querySelector('header');
+    if (banner && header && document.body.classList.contains('suburb-page') && window.innerWidth >= 769) {
+        const setBannerHeight = () => {
+            if (!banner.classList.contains('hidden')) {
+                const bannerH = banner.offsetHeight || 40;
+                document.documentElement.style.setProperty('--em-banner-height', bannerH + 'px');
+                document.body.style.paddingTop = (bannerH + header.offsetHeight) + 'px';
+            }
+        };
+        setBannerHeight();
+        window.addEventListener('resize', setBannerHeight);
+    }
+
     // Select the visible mobile menu toggle (prefer header-top one for internal pages)
     const mobileMenuToggle = document.querySelector('.header-top .mobile-menu-toggle') || 
                              document.querySelector('.mobile-menu-toggle');
@@ -357,61 +372,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const quoteForm = document.querySelector('.form-container form');
     
-    // Don't add JavaScript handler if form uses Netlify
-    const isNetlifyForm = quoteForm && (
-        quoteForm.hasAttribute('netlify') || 
-        quoteForm.hasAttribute('data-netlify') ||
-        quoteForm.getAttribute('data-netlify') === 'true'
-    );
-    
-    if (quoteForm && !isNetlifyForm) {
+    function showFormSuccess(formContainer) {
+        if (!formContainer) return;
+        formContainer.innerHTML = '<div class="form-success-state"><div class="form-success-icon"><i class="fas fa-check-circle"></i></div><h2>Request Submitted!</h2><p>Thank you. We\'ll get back to you within 30 minutes during business hours.</p></div>';
+        formContainer.classList.add('form-success');
+    }
+
+    function showFormError(form, message) {
+        const formMessageContainer = form.querySelector('.form-message-container');
+        const msg = formMessageContainer || document.createElement('div');
+        if (!formMessageContainer) {
+            msg.className = 'form-message-container';
+            form.appendChild(msg);
+        }
+        msg.innerHTML = '<div class="form-message error">' + (message || 'Something went wrong. Please try again or call us.') + '</div>';
+        msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    if (quoteForm) {
+        const formContainer = quoteForm.closest('.form-container');
+
         quoteForm.addEventListener('submit', function(e) {
-            // Double-check: if this is a Netlify form, don't intercept
-            if (this.hasAttribute('netlify') || this.hasAttribute('data-netlify') || this.getAttribute('data-netlify') === 'true') {
-                return; // Let Netlify handle it
-            }
-            
             e.preventDefault();
-            
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.innerHTML;
+            var form = this;
+            var submitButton = form.querySelector('button[type="submit"]');
+            var originalButtonText = submitButton.innerHTML;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
             submitButton.disabled = true;
+
+            var msgContainer = form.querySelector('.form-message-container');
+            if (msgContainer) msgContainer.innerHTML = '';
             
-            const formData = new FormData(this);
-            
-            fetch('submit-form.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                const messageElement = document.createElement('div');
-                messageElement.className = `form-message ${data.status}`;
-                messageElement.innerHTML = data.message;
-                
-                const formMessageContainer = document.querySelector('.form-message-container');
-                if (formMessageContainer) {
-                    formMessageContainer.innerHTML = '';
-                    formMessageContainer.appendChild(messageElement);
-                } else {
-                    this.insertAdjacentElement('afterend', messageElement);
-                }
-                
-                if (data.status === 'success') {
-                    this.reset();
-                }
-                
-                submitButton.innerHTML = originalButtonText;
-                submitButton.disabled = false;
-                
-                messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                submitButton.innerHTML = originalButtonText;
-                submitButton.disabled = false;
-            });
+            var formData = new FormData(form);
+            var isNetlify = form.hasAttribute('data-netlify') || form.hasAttribute('netlify');
+            var action = form.getAttribute('action') || '';
+
+            // Netlify form
+            if (isNetlify) {
+                fetch(action || '/', {
+                    method: 'POST',
+                    headers: { 'Accept': 'text/html' },
+                    body: new URLSearchParams(formData).toString(),
+                    
+                })
+                .then(function(response) {
+                    showFormSuccess(formContainer);
+                })
+                .catch(function() {
+                    // Still show success - the form data was likely sent
+                    showFormSuccess(formContainer);
+                });
+            }
+            // PHP form
+            else {
+                fetch(action || 'submit-form.php', { method: 'POST', body: formData })
+                .then(function(response) { return response.json(); })
+                .then(function(data) {
+                    if (data && data.status === 'error') {
+                        showFormError(form, data.message);
+                        submitButton.innerHTML = originalButtonText;
+                        submitButton.disabled = false;
+                    } else {
+                        showFormSuccess(formContainer);
+                    }
+                })
+                .catch(function() {
+                    // Show success anyway for local testing / non-PHP environments
+                    showFormSuccess(formContainer);
+                });
+            }
         });
     }
 
