@@ -38,6 +38,14 @@
     --brand-dark: #d4a000;
 }
 
+@media (max-width: 768px) {
+    .header-top .logo img,
+    header .logo img,
+    .footer-logo img {
+        content: url("images/logo.png");
+    }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap');
 
 * {
@@ -59,7 +67,7 @@ body {
     font-size: var(--body-size);
     overflow-x: hidden;
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -213,7 +221,7 @@ header {
 }
 
 .logo {
-    max-width: 200px; 
+    max-width: 320px; 
     height: auto;
 }
 
@@ -1096,7 +1104,7 @@ footer {
 
 .footer-logo {
     margin-bottom: var(--spacing-sm);
-    max-width: 500px; 
+    max-width: 550px; 
 }
 
 .social-icons {
@@ -1708,7 +1716,7 @@ footer {
 }
 
 .service-overview {
-    padding: var(--spacing-xl) 0;
+    padding: 2.5rem 0;
     background-color: var(--white);
 }
 
@@ -1772,7 +1780,7 @@ footer {
 }
 
 .signs-section {
-    padding: var(--spacing-xl) 0 var(--spacing-md) 0; 
+    padding: 2.5rem 0 1rem 0;
     background-color: var(--light-color);
 }
 
@@ -1822,7 +1830,7 @@ footer {
 }
 
 .benefits-section {
-    padding: var(--spacing-md) 0 var(--spacing-xl) 0; 
+    padding: 1rem 0 2.5rem 0;
     background-color: var(--white);
 }
 
@@ -1878,7 +1886,7 @@ footer {
 }
 
 .process-section {
-    padding: var(--spacing-xl) 0;
+    padding: 2.5rem 0;
     background-color: var(--light-color);
 }
 
@@ -1941,7 +1949,7 @@ footer {
 }
 
 .pricing-section {
-    padding: var(--spacing-xl) 0;
+    padding: 2.5rem 0;
     background-color: var(--white);
 }
 
@@ -2037,7 +2045,7 @@ footer {
 
 
 .faq-section {
-    padding: var(--spacing-xl) 0;
+    padding: 2.5rem 0;
     background-color: var(--light-color);
 }
 
@@ -2189,7 +2197,7 @@ footer {
 
 .regulations-section {
     background-color: var(--light-color);
-    padding: 70px 0;
+    padding: 2.5rem 0;
 }
 
 .two-column-grid {
@@ -2234,7 +2242,7 @@ footer {
 }
 
 .alarm-types-section {
-    padding: 70px 0;
+    padding: 2.5rem 0;
 }
 
 .types-grid {
@@ -2649,7 +2657,7 @@ footer {
 }
 
 .security-systems {
-    padding: var(--spacing-xl) 0;
+    padding: 2.5rem 0;
     background-color: var(--white);
 }
 
@@ -2751,7 +2759,7 @@ footer {
 
 .security-layers {
     background: var(--light-color);
-    padding: var(--spacing-xl) 0;
+    padding: 2.5rem 0;
     border-radius: 18px;
 }
 
@@ -3016,7 +3024,7 @@ footer {
 
  Security Comparison Table */
 .security-comparison {
-    padding: var(--spacing-xl) 0;
+    padding: 2.5rem 0;
 }
 
 .comparison-table-wrapper {
@@ -3192,7 +3200,7 @@ footer {
 }
 
 .security-faq {
-    padding: var(--spacing-xl) 0;
+    padding: 2.5rem 0;
 }
 
 .security-accordion {
@@ -3461,7 +3469,7 @@ footer {
     }
     
     .logo {
-        max-width: 150px;
+        max-width: 240px;
     }
     
     nav .container {
@@ -3559,7 +3567,7 @@ footer {
     }
     body.internal .header-top .logo { text-align: center; }
     body.internal .header-top .logo img {
-        max-height: 60px; width: auto; height: auto; display: block; margin: 0 auto;
+        max-height: 70px; width: auto; height: auto; display: block; margin: 0 auto;
     }
     body.internal .header-top .contact-info { margin-top: 55px; }
     body.internal .header-top .contact-info .cta-button { display: none; }

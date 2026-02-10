@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MC53W49R');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Hometown Electrical - Get In Touch Today</title>
@@ -11,7 +14,8 @@
     <meta property="og:title" content="Contact Us | Hometown Electrical">
     <meta property="og:description" content="Contact Melbourne's trusted electrical experts. 24/7 emergency service available.">
     <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://melbourneelectricians.com.au/">
+    <meta property="og:url" content="https://hometownelectrical.com.au/">
+    <link rel="canonical" href="https://hometownelectrical.com.au/contact.html">
     <style>
         .contact-hero {
             background: linear-gradient(135deg, rgba(13, 46, 76, 0.75), rgba(46, 125, 183, 0.85)), url('images/Chandelier-light.jpg');
@@ -94,8 +98,11 @@
         .contact-hero p { color: rgba(255, 255, 255, 0.9); } 
 
         .contact-methods {
-            padding: var(--spacing-xl) 0;
-            background-color: var(--white);
+            padding: 2.5rem 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('images/Light-Install.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .contact-methods-grid {
@@ -158,7 +165,7 @@
             color: var(--white);
             padding: var(--spacing-md) 0;
             text-align: center;
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: 0;
         }
 
         .emergency-banner h3 {
@@ -167,7 +174,7 @@
         }
 
         .map-section {
-            padding: var(--spacing-xl) 0;
+            padding: 2.5rem 0;
             background-color: var(--light-color);
         }
 
@@ -187,9 +194,14 @@
         }
 
         .office-hours {
-            padding: var(--spacing-xl) 0;
+            padding: 2.5rem 0;
             background-color: var(--secondary-color);
             color: var(--white);
+        }
+
+        .office-hours .section-title {
+            color: var(--white) !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hours-grid {
@@ -236,12 +248,15 @@
     </style>
 </head>
 <body class="internal">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC53W49R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <header>
         <div class="header-top">
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                        <img src="images/logo2.png" alt="Hometown Electrical Logo">
                     </a>
                 </div>
                 <div class="mobile-menu-toggle" aria-label="Toggle mobile menu" role="button" tabindex="0">
@@ -315,7 +330,7 @@
                     </div>
                     <h3>Email Us</h3>
                     <p>Send us your electrical questions or requests</p>
-                    <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a>
+                    <a href="mailto:info@hometownelectrical.com.au">info@hometownelectrical.com.au</a>
                     <p><small>We respond within 2 hours during business hours</small></p>
                 </div>
                 
@@ -359,7 +374,8 @@
             <div class="form-container">
                 <h2>Request a Free Quote</h2>
                 <p>Fill out the form below and we'll get back to you within 30 minutes during business hours with a detailed quote.</p>
-                <form action="submit-form.php" method="POST">
+                <form name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -488,7 +504,7 @@
             <div class="footer-top">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                        <img src="images/logo2.png" alt="Hometown Electrical Logo">
                     </div>
                     <p>Your trusted local electricians serving all Melbourne suburbs. Available 24/7 for all your electrical needs.</p>
                     <div class="social-icons">
@@ -523,7 +539,7 @@
                     <h3>Contact Us</h3>
                     <ul class="contact-list">
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+61415566264">0415 566 264</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@hometownelectrical.com.au">info@hometownelectrical.com.au</a></li>
                         
                         <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
                     </ul>

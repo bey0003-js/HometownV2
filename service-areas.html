@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MC53W49R');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Areas - Electrical Services</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="canonical" href="https://hometownelectrical.com.au/service-areas.html">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <style>
         .service-areas-hero {
-            background: linear-gradient(135deg, rgba(13, 46, 76, 0.9), rgba(46, 125, 183, 0.95)), url('images/service-areas-hero.jpg');
+            background: linear-gradient(135deg, rgba(13, 46, 76, 0.7), rgba(46, 125, 183, 0.8)), url('images/Light-Install.jpg');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -40,8 +46,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(246, 183, 0, 0.12) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+            background: radial-gradient(circle, rgba(246, 183, 0, 0.12) 0%, transparent 60%);
+            animation: rotate 30s linear infinite;
             z-index: 1;
         }
 
@@ -78,7 +84,7 @@
         }
 
         .map-section {
-            padding: var(--spacing-xl) 0;
+            padding: 2.5rem 0;
             background-color: var(--light-color);
         }
 
@@ -89,6 +95,48 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
             margin: var(--spacing-lg) 0;
+            position: relative;
+        }
+
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .map-legend {
+            background: rgba(255, 255, 255, 0.95);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+            box-shadow: var(--box-shadow);
+            font-size: 0.9rem;
+        }
+
+        .map-legend h4 {
+            margin: 0 0 var(--spacing-xs) 0;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        .map-legend ul {
+            margin: 0;
+            padding-left: var(--spacing-sm);
+        }
+
+        .map-legend li {
+            margin-bottom: 2px;
+            font-size: 0.8rem;
         }
 
         .map-container iframe {
@@ -110,6 +158,9 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
         }
 
         .area-card:hover {
@@ -131,6 +182,7 @@
         .area-card ul {
             list-style: none;
             padding: 0;
+            flex-grow: 1;
         }
 
         .area-card ul li {
@@ -281,13 +333,16 @@
     </style>
 </head>
 <body class="internal">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC53W49R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     
     <header>
         <div class="header-top">
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="Electrical Services Logo">
+                        <img src="images/logo2.png" alt="Electrical Services Logo">
                     </a>
                 </div>
                 <div class="mobile-menu-toggle" aria-label="Toggle mobile menu" role="button" tabindex="0">
@@ -296,7 +351,7 @@
                 <div class="contact-info">
                     <div class="phone-number">
                         <i class="fas fa-phone"></i>
-                        <a href="tel:0400123456">0400 123 456</a>
+                        <a href="tel:+61415566264">0415 566 264</a>
                     </div>
                     <a href="contact.html" class="cta-button">Get Quote</a>
                 </div>
@@ -343,76 +398,113 @@
             <p>We proudly serve the following Melbourne areas with our professional electrical services:</p>
             
             <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1640937.1258281504!2d143.6317348611869!3d-38.00461855590253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad64cd4fb9c9837%3A0x4fa8e21316d386e4!2sMelbourne%20Metropolitan%20Area%20and%20Geelong!5e0!3m2!1sen!2sau!4v1647890123456!5m2!1sen!2sau" 
-                    loading="lazy">
-                </iframe>
+                <div id="service-map" style="width: 100%; height: 100%;"></div>
+                <div class="map-legend">
+                    <h4><i class="fas fa-map-marker-alt"></i> Service Areas</h4>
+                    <ul>
+                        <li><strong>Melbourne CBD & Inner</strong></li>
+                        <li><strong>Eastern Suburbs</strong></li>
+                        <li><strong>Western Melbourne</strong></li>
+                        <li><strong>Geelong & Bellarine</strong></li>
+                    </ul>
+                </div>
             </div>
 
             <div class="areas-grid">
                 <div class="area-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Melbourne CBD</h3>
+                    <h3><i class="fas fa-map-marker-alt"></i> Melbourne CBD & Inner</h3>
                     <ul>
-                        <li>Melbourne City</li>
-                        <li>Southbank</li>
-                        <li>Docklands</li>
-                        <li>Carlton</li>
-                        <li>North Melbourne</li>
-                    </ul>
-                </div>
-
-                <div class="area-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Inner East</h3>
-                    <ul>
-                        <li>Richmond</li>
-                        <li>Hawthorn</li>
-                        <li>Kew</li>
-                        <li>Camberwell</li>
-                        <li>Dandenong</li>
-                    </ul>
-                </div>
-
-                <div class="area-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Inner West</h3>
-                    <ul>
-                        <li>Footscray</li>
-                        <li>Derrimut</li>
-                        <li>Williamstown</li>
-                        <li>Altona</li>
-                        <li>Werribee</li>
-                    </ul>
-                </div>
-
-                <div class="area-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Inner North</h3>
-                    <ul>
-                        <li>Brunswick</li>
-                        <li>Fitzroy</li>
-                        <li>Northcote</li>
-                        <li>Preston</li>
-                        <li>Coburg</li>
+                        <li><a href="electrician-fitzroy.html">Fitzroy</a></li>
+                        <li><a href="electrician-collingwood.html">Collingwood</a></li>
+                        <li><a href="electrician-richmond.html">Richmond</a></li>
                     </ul>
                 </div>
 
                 <div class="area-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Inner South</h3>
                     <ul>
-                        <li>South Yarra</li>
-                        <li>Prahran</li>
-                        <li>St Kilda</li>
-                        <li>Brighton</li>
-                        <li>Elwood</li>
+                        <li><a href="electrician-south-yarra.html">South Yarra</a></li>
+                        <li><a href="electrician-prahran.html">Prahran</a></li>
+                        <li><a href="electrician-st-kilda.html">St Kilda</a></li>
+                        <li><a href="electrician-elwood.html">Elwood</a></li>
+                        <li><a href="electrician-brighton.html">Brighton</a></li>
+                        <li><a href="electrician-caulfield.html">Caulfield</a></li>
                     </ul>
                 </div>
 
                 <div class="area-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Western Region</h3>
+                    <h3><i class="fas fa-map-marker-alt"></i> Inner North</h3>
                     <ul>
-                        <li>Melton</li>
-                        <li>Bacchus Marsh</li>
-                        <li>Geelong</li>
-                        <li>Lara</li>
-                        <li>Corio</li>
+                        <li><a href="electrician-brunswick.html">Brunswick</a></li>
+                        <li><a href="electrician-coburg.html">Coburg</a></li>
+                        <li><a href="electrician-northcote.html">Northcote</a></li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Inner East</h3>
+                    <ul>
+                        <li><a href="electrician-hawthorn.html">Hawthorn</a></li>
+                        <li><a href="electrician-kew.html">Kew</a></li>
+                        <li><a href="electrician-box-hill.html">Box Hill</a></li>
+                        <li><a href="electrician-doncaster.html">Doncaster</a></li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Inner West</h3>
+                    <ul>
+                        <li><a href="electrician-footscray.html">Footscray</a></li>
+                        <li><a href="electrician-yarraville.html">Yarraville</a></li>
+                        <li><a href="electrician-williamstown.html">Williamstown</a></li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> South East</h3>
+                    <ul>
+                        <li><a href="electrician-glen-waverley.html">Glen Waverley</a></li>
+                        <li><a href="electrician-frankston.html">Frankston</a></li>
+                        <li><a href="electrician-rowville.html">Rowville</a></li>
+                        <li><a href="electrician-dandenong.html">Dandenong</a></li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Western Suburbs</h3>
+                    <ul>
+                        <li><a href="electrician-werribee.html">Werribee</a></li>
+                        <li><a href="electrician-point-cook.html">Point Cook</a></li>
+                        <li><a href="electrician-tarneit.html">Tarneit</a></li>
+                        <li><a href="electrician-hoppers-crossing.html">Hoppers Crossing</a></li>
+                        <li><a href="electrician-deer-park.html">Deer Park</a></li>
+                        <li><a href="electrician-keilor.html">Keilor</a></li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> North West</h3>
+                    <ul>
+                        <li><a href="electrician-melton.html">Melton</a></li>
+                        <li><a href="electrician-rockbank.html">Rockbank</a></li>
+                        <li><a href="electrician-caroline-springs.html">Caroline Springs</a></li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Geelong & Bellarine</h3>
+                    <ul>
+                        <li><a href="electrician-geelong.html">Geelong</a></li>
+                        <li><a href="electrician-corio.html">Corio</a></li>
+                        <li><a href="electrician-waurn-ponds.html">Waurn Ponds</a></li>
+                        <li><a href="electrician-torquay.html">Torquay</a></li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Regional</h3>
+                    <ul>
+                        <li><a href="electrician-ballarat.html">Ballarat</a></li>
                     </ul>
                 </div>
             </div>
@@ -429,7 +521,7 @@
             <div class="footer-top">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                        <img src="images/logo2.png" alt="Hometown Electrical Logo">
                     </div>
                     <p>Your trusted local electricians serving all Melbourne suburbs. Available 24/7 for all your electrical needs.</p>
                     <div class="social-icons">
@@ -464,7 +556,7 @@
                     <h3>Contact Us</h3>
                     <ul class="contact-list">
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+61415566264">0415 566 264</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@hometownelectrical.com.au">info@hometownelectrical.com.au</a></li>
                         
                         <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
                     </ul>
@@ -483,5 +575,108 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="geojson-data.js"></script>
+
+    <script>
+    function initMap() {
+        // Check if Leaflet loaded successfully
+        if (typeof L === 'undefined') {
+            console.error('Leaflet failed to load.');
+            const mapContainer = document.getElementById('service-map');
+            if (mapContainer) {
+                mapContainer.innerHTML = '<div style="padding: 20px; text-align: center; color: #ff4444;"><strong>Error:</strong> Leaflet failed to load. Please check your internet connection.</div>';
+            }
+            return;
+        }
+
+        // Center the map between Melbourne and Geelong
+        const center = [-37.7, 144.4];
+
+        // Create the map
+        const map = L.map('service-map').setView(center, 8);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 18
+        }).addTo(map);
+
+        // Create a layer group for service areas
+        const serviceAreasLayer = L.layerGroup().addTo(map);
+
+        // Style for the service area polygons
+        const serviceAreaStyle = {
+            color: '#FF6B35',
+            weight: 0.7,
+            opacity: 0.8,
+            fillColor: '#FF6B35',
+            fillOpacity: 0.15
+        };
+
+        // Function to handle GeoJSON loading error
+        function showGeoJsonError() {
+            const errorDiv = document.createElement('div');
+            errorDiv.style.cssText = 'position: absolute; top: 50px; left: 50%; transform: translateX(-50%); background: #ff4444; color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000; max-width: 90%; text-align: center;';
+            errorDiv.innerHTML = 'Unable to load service area map.<br>Please ensure the GeoJSON file is accessible and check the browser console for details.';
+            const mapContainer = document.getElementById('service-map').parentElement;
+            if (mapContainer) {
+                mapContainer.appendChild(errorDiv);
+                setTimeout(function() {
+                    errorDiv.remove();
+                }, 8000);
+            }
+        }
+
+        // Use the embedded GeoJSON data (loaded via script tag)
+        if (typeof serviceAreaGeoJson !== 'undefined') {
+            try {
+                // Add the GeoJSON to the map
+                const geoJsonLayer = L.geoJSON(serviceAreaGeoJson, {
+                    style: serviceAreaStyle,
+                    onEachFeature: function(feature, layer) {
+                        // Add popup with LGA name
+                        const lgaName = feature.properties.lga_name || 'Service Area';
+                        layer.bindPopup('<div style="font-weight: bold; padding: 5px;">' + lgaName + '</div>' +
+                                       '<div style="padding: 5px;">We provide electrical services in this area</div>');
+                    }
+                }).addTo(serviceAreasLayer);
+
+                // Fit map bounds to show all service areas
+                if (geoJsonLayer.getBounds().isValid()) {
+                    map.fitBounds(geoJsonLayer.getBounds());
+                    // Don't zoom in too much - keep a reasonable zoom level
+                    if (map.getZoom() > 10) {
+                        map.setZoom(10);
+                    }
+                }
+            } catch (mapError) {
+                console.error('Error adding GeoJSON to map:', mapError);
+                showGeoJsonError();
+            }
+        } else {
+            console.error('GeoJSON data not loaded');
+            showGeoJsonError();
+        }
+
+        // Add markers for major service locations
+        const melbourneIcon = L.divIcon({
+            html: '<i class="fas fa-map-marker-alt" style="color: #FF6B35; font-size: 24px;"></i>',
+            className: 'custom-marker',
+            iconSize: [24, 24],
+            iconAnchor: [12, 24]
+        });
+
+        const melbourneMarker = L.marker([-37.8136, 144.9631], {icon: melbourneIcon})
+            .addTo(map)
+            .bindPopup('<strong>Melbourne CBD</strong><br>Main service location');
+
+        const geelongMarker = L.marker([-38.1499, 144.3617], {icon: melbourneIcon})
+            .addTo(map)
+            .bindPopup('<strong>Geelong</strong><br>Regional service location');
+    }
+
+    // Initialize map when page loads
+    window.addEventListener('load', initMap);
+    </script>
 </body>
 </html> 

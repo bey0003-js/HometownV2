@@ -3,18 +3,11 @@
 
 $all_suburbs = array(
     
-    'carlton' => array(
-        'name' => 'Carlton',
-        'postcode' => '3053',
-        'description' => 'Carlton is known for its Victorian-era homes and heritage buildings that often require specialized electrical work.',
-        'nearby' => array('Parkville', 'North Melbourne', 'Fitzroy', 'Melbourne CBD'),
-        'region' => 'Inner North'
-    ),
     'fitzroy' => array(
         'name' => 'Fitzroy',
         'postcode' => '3065',
         'description' => 'Fitzroy\'s mix of old terrace houses and modern apartments creates diverse electrical needs.',
-        'nearby' => array('Carlton', 'Collingwood', 'Clifton Hill', 'Northcote'),
+        'nearby' => array('Collingwood', 'Clifton Hill', 'Northcote', 'Parkville'),
         'region' => 'Inner North'
     ),
     'collingwood' => array(
@@ -65,30 +58,21 @@ $all_suburbs = array(
         'name' => 'Coburg',
         'postcode' => '3058',
         'description' => 'Coburg\'s family homes and businesses trust our local electricians.',
-        'nearby' => array('Brunswick', 'Preston', 'Pascoe Vale', 'Coburg North'),
+        'nearby' => array('Brunswick', 'Northcote', 'Pascoe Vale', 'Coburg North'),
         'region' => 'Inner North'
     ),
     'northcote' => array(
         'name' => 'Northcote',
         'postcode' => '3070',
         'description' => 'Northcote\'s trendy cafes and residential properties need expert electrical maintenance.',
-        'nearby' => array('Thornbury', 'Fairfield', 'Fitzroy', 'Preston'),
+        'nearby' => array('Thornbury', 'Fairfield', 'Fitzroy', 'Brunswick'),
         'region' => 'Inner North'
     ),
-    'preston' => array(
-        'name' => 'Preston',
-        'postcode' => '3072',
-        'description' => 'Preston\'s growing community benefits from our fast and reliable electrical services.',
-        'nearby' => array('Northcote', 'Coburg', 'Thornbury', 'Reservoir'),
-        'region' => 'Outer North'
-    ),
-    
-    
     'hawthorn' => array(
         'name' => 'Hawthorn',
         'postcode' => '3122',
         'description' => 'Hawthorn\'s leafy streets and established homes benefit from our experienced electricians.',
-        'nearby' => array('Kew', 'Camberwell', 'Richmond', 'Auburn'),
+        'nearby' => array('Kew', 'Box Hill', 'Richmond', 'Auburn'),
         'region' => 'Inner East'
     ),
     'kew' => array(
@@ -96,13 +80,6 @@ $all_suburbs = array(
         'postcode' => '3101',
         'description' => 'Kew\'s prestigious homes and heritage properties require specialized electrical expertise.',
         'nearby' => array('Hawthorn', 'Balwyn', 'Clifton Hill', 'Kew East'),
-        'region' => 'Inner East'
-    ),
-    'camberwell' => array(
-        'name' => 'Camberwell',
-        'postcode' => '3124',
-        'description' => 'Camberwell\'s quality homes and commercial spaces trust our electrical services.',
-        'nearby' => array('Hawthorn', 'Surrey Hills', 'Glen Iris', 'Canterbury'),
         'region' => 'Inner East'
     ),
     'box-hill' => array(
@@ -198,7 +175,7 @@ function get_suburb_data($suburb_slug) {
         'name' => ucwords(str_replace('-', ' ', $suburb_slug)),
         'postcode' => '',
         'description' => 'We provide expert electrical services throughout Melbourne.',
-        'nearby' => array('Carlton', 'Fitzroy', 'Richmond', 'Brunswick'),
+        'nearby' => array('Fitzroy', 'Richmond', 'Brunswick', 'Collingwood'),
         'region' => 'Melbourne'
     );
 }

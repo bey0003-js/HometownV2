@@ -6,4 +6,4 @@ Allow: /
 Disallow: /submit-form.php
 
 # Sitemaps
-Sitemap: https://melbourneelectricians.com.au/sitemap.xml 
+Sitemap: https://hometownelectrical.com.au/sitemap.xml

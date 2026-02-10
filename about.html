@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MC53W49R');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Hometown Electrical - Serving Every Corner of Melbourne</title>
@@ -10,9 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <meta property="og:title" content="About Us | Hometown Electrical - Serving Every Melbourne Suburb">
-    <meta property="og:description" content="From Carlton to Brighton, Footscray to Kew - discover how Hometown Electrical serves every corner of Melbourne.">
+    <meta property="og:description" content="From Fitzroy to Brighton, Footscray to Kew - discover how Hometown Electrical serves every corner of Melbourne.">
     <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://melbourneelectricians.com.au/">
+    <meta property="og:url" content="https://hometownelectrical.com.au/">
+    <link rel="canonical" href="https://hometownelectrical.com.au/about.html">
     
     <style>
         .about-hero {
@@ -137,20 +141,25 @@
             .hero-stats .stat {
                 padding: 15px 25px;
             }
+
         }
 
         .melbourne-map-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--light-color), white);
+            padding: 2.5rem 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('images/Electrician-team.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
         }
 
         .map-story-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            display: block;
             margin-bottom: 60px;
+        }
+
+        .story-content {
+            color: var(--secondary-color);
         }
 
         .story-content h2 {
@@ -158,6 +167,10 @@
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             position: relative;
+        }
+
+        .story-content p {
+            color: var(--secondary-color);
         }
 
         .story-content h2::after {
@@ -233,7 +246,6 @@
         .dot-richmond { top: 60%; right: 20%; }
         .dot-brunswick { top: 20%; left: 40%; }
         .dot-fitzroy { top: 30%; right: 30%; }
-        .dot-carlton { top: 35%; left: 50%; }
         .dot-st-kilda { bottom: 20%; left: 40%; }
         .dot-footscray { top: 50%; left: 10%; }
         .dot-hawthorn { bottom: 30%; right: 15%; }
@@ -294,9 +306,13 @@
         }
 
         .timeline-section {
-            padding: 80px 0;
-            background: var(--secondary-color);
+            padding: 2.5rem 0;
+            background: linear-gradient(rgba(13, 46, 76, 0.85), rgba(13, 46, 76, 0.85)), url('images/Commercial-lighting.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
+            position: relative;
         }
 
         .timeline-container {
@@ -336,11 +352,7 @@
         }
 
         .timeline-year {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-color);
-            color: var(--secondary-color);
+            display: none;
             width: 80px;
             height: 80px;
             border-radius: 50%;
@@ -409,7 +421,12 @@
             font-size: 2rem;
         }
 
+
         @media (max-width: 768px) {
+            .melbourne-map-section {
+                background-attachment: scroll;
+            }
+            
             .map-story-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -436,12 +453,15 @@
     </style>
 </head>
 <body class="internal">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC53W49R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <header>
         <div class="header-top">
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                        <img src="images/logo2.png" alt="Hometown Electrical Logo">
                     </a>
                 </div>
                 <div class="mobile-menu-toggle" aria-label="Toggle mobile menu" role="button" tabindex="0">
@@ -485,7 +505,7 @@
     <section class="about-hero">
         <div class="container">
             <h1>Honest. Reliable. Local. Expert.</h1>
-            <p class="subtitle">For over 15 years, we've built our reputation one job at a time - from emergency repairs in Richmond to new installations in Brighton, from heritage home upgrades in Carlton to commercial projects in Docklands. We're the electricians Melbourne trusts.</p>
+            <p class="subtitle">For over 15 years, we've built our reputation one job at a time - from emergency repairs in Richmond to new installations in Brighton, from heritage home upgrades in Fitzroy to commercial projects in Docklands. We're the electricians Melbourne trusts.</p>
             <div class="hero-stats">
                 <div class="stat">
                     <strong>100%</strong>
@@ -509,24 +529,22 @@
                 <div class="story-content">
                     <h2>Built on Trust, Powered by Expertise</h2>
                     <p>What started in 2008 with one electrician and a van has grown into Melbourne's most trusted electrical team. Not because we're the biggest, but because we've never forgotten the values that matter: showing up when we say we will, doing the job right the first time, and treating every customer's home in Hawthorn or office in Collins Street like it's our own.</p>
-                    
+
                     <p>Our founder, Michael, started after being frustrated with unreliable contractors. "I wanted to build a company where customers in Fitzroy get the same honest service as those in Toorak," he says. Today, whether it's Mrs. Chen in Box Hill needing emergency repairs or the new café in Brunswick requiring complete rewiring, our commitment remains unchanged.</p>
-                    
+
                     <p><strong>We're not just electricians serving Melbourne - we're Hometown Electrical, Melbourne locals who happen to be expert electricians.</strong></p>
                 </div>
-                
-                
             </div>
 
             <div class="areas-showcase">
                 <div class="area-story-card">
                     <h3><span class="area-icon"><i class="fas fa-handshake"></i></span>Honest & Transparent Pricing</h3>
-                    <p>No surprises, no hidden fees. Whether you're in Prahran or Preston, Kew or Keilor, you'll know the cost upfront. Our customer Sarah from Camberwell said: "Finally, an electrician who quotes what they actually charge!" We believe honest pricing builds lasting relationships across every Melbourne suburb.</p>
+                    <p>No surprises, no hidden fees. Whether you're in Prahran or Northcote, Kew or Keilor, you'll know the cost upfront. Our customer Sarah from Hawthorn said: "Finally, an electrician who quotes what they actually charge!" We believe honest pricing builds lasting relationships across every Melbourne suburb.</p>
                 </div>
 
                 <div class="area-story-card">
                     <h3><span class="area-icon"><i class="fas fa-clock"></i></span>Reliable When You Need Us</h3>
-                    <p>When we say 2pm, we mean 2pm - whether that's in Carlton or Caroline Springs. Our punctuality is legendary from Northcote to Narre Warren. Emergency at midnight in St Kilda? We're there. Scheduled maintenance in Malvern? On time, every time. Reliability isn't just our promise, it's our reputation.</p>
+                    <p>When we say 2pm, we mean 2pm - whether that's in Fitzroy or Caroline Springs. Our punctuality is legendary from Northcote to Narre Warren. Emergency at midnight in St Kilda? We're there. Scheduled maintenance in Malvern? On time, every time. Reliability isn't just our promise, it's our reputation.</p>
                 </div>
 
                 <div class="area-story-card">
@@ -570,7 +588,7 @@
                     <div class="timeline-year">2012</div>
                     <div class="timeline-content">
                         <h3>Building a Team of Local Experts</h3>
-                        <p>Sarah joined from Fitzroy, bringing her expertise in heritage electrical work. David from Carlton specialized in emergency response. Together, they expanded our reputation for reliability across Brunswick, Collingwood, and beyond. Quality work speaks louder than advertising.</p>
+                        <p>Sarah joined from Fitzroy, bringing her expertise in heritage electrical work. David from Richmond specialized in emergency response. Together, they expanded our reputation for reliability across Brunswick, Collingwood, and beyond. Quality work speaks louder than advertising.</p>
                     </div>
                 </div>
 
@@ -593,7 +611,7 @@
                 <div class="timeline-item">
                     <div class="timeline-year">2023</div>
                     <div class="timeline-content">
-                        <h3>Melbourne's Most Trusted Electrical Team</h3>
+                              <h3>Melbourne's Most Trusted Electrical Team</h3>
                         <p>Today, Hometown Electrical is the team Melbourne calls first. From Craigieburn to Frankston, Werribee to Ringwood, our reputation for honest service, reliable timing, and expert workmanship has made us the trusted choice for thousands of Melbourne families and businesses.</p>
                     </div>
                 </div>
@@ -601,7 +619,7 @@
         </div>
     </section>
 
-    <section class="testimonials-section" style="padding: 80px 0; background: var(--light-color);">
+    <section class="testimonials-section" style="padding: 40px 0; background: var(--light-color);">
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">What Melbourne Says About Us</h2>
             <div class="knowledge-grid">
@@ -626,7 +644,7 @@
         </div>
     </section>
 
-    <section class="service-areas-section" style="padding: 80px 0; background: var(--secondary-color); color: white;">
+    <section class="service-areas-section" style="padding: 40px 0; background: var(--secondary-color); color: white;">
         <div class="container">
             <h2 class="section-title" style="text-align: center; color: white; margin-bottom: 40px;">Proudly Serving All Melbourne Suburbs</h2>
             <p style="text-align: center; font-size: 1.2rem; margin-bottom: 60px; opacity: 0.9;">From heritage homes to modern apartments, family businesses to corporate offices - we bring the same honest, reliable, expert service to every corner of Melbourne.</p>
@@ -634,11 +652,11 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
                 <div>
                     <h4 style="color: var(--primary-color); margin-bottom: 15px;">Inner Melbourne</h4>
-                    <p style="font-size: 0.9rem; line-height: 1.6;">Carlton • Fitzroy • Richmond • Collingwood • Abbotsford • Brunswick • Northcote • Thornbury • Preston • Parkville • North Melbourne • West Melbourne • East Melbourne • Southbank</p>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">Fitzroy • Richmond • Collingwood • Abbotsford • Brunswick • Northcote • Thornbury • Parkville • North Melbourne • West Melbourne • East Melbourne • Southbank</p>
                 </div>
                 <div>
                     <h4 style="color: var(--primary-color); margin-bottom: 15px;">Eastern Suburbs</h4>
-                    <p style="font-size: 0.9rem; line-height: 1.6;">Hawthorn • Kew • Camberwell • Canterbury • Balwyn • Deepdene • Mont Albert • Box Hill • Doncaster • Templestowe • Ashburton • Glen Iris • Malvern • Armadale • Toorak • South Yarra • Prahran</p>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">Hawthorn • Kew • Canterbury • Balwyn • Deepdene • Mont Albert • Box Hill • Doncaster • Templestowe • Ashburton • Glen Iris • Malvern • Armadale • Toorak • South Yarra • Prahran</p>
                 </div>
                 <div>
                     <h4 style="color: var(--primary-color); margin-bottom: 15px;">Western Suburbs</h4>
@@ -678,7 +696,7 @@
             <div class="footer-top">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                        <img src="images/logo2.png" alt="Hometown Electrical Logo">
                     </div>
                     <p>Your trusted local electricians serving all Melbourne suburbs. Available 24/7 for all your electrical needs.</p>
                     <div class="social-icons">
@@ -713,7 +731,7 @@
                     <h3>Contact Us</h3>
                     <ul class="contact-list">
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+61415566264">0415 566 264</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@hometownelectrical.com.au">info@hometownelectrical.com.au</a></li>
                         
                         <li><i class="fas fa-clock"></i> Available 24/7 for emergencies</li>
                     </ul>

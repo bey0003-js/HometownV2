@@ -5,15 +5,10 @@ $suburb_slug = strtolower(str_replace(' ', '-', $suburb));
 
 
 $suburb_data = array(
-    'carlton' => array(
-        'postcode' => '3053',
-        'description' => 'Carlton is known for its Victorian-era homes and heritage buildings that often require specialized electrical work.',
-        'nearby' => array('Parkville', 'North Melbourne', 'Fitzroy')
-    ),
     'fitzroy' => array(
         'postcode' => '3065',
         'description' => 'Fitzroy\'s mix of old terrace houses and modern apartments creates diverse electrical needs.',
-        'nearby' => array('Carlton', 'Collingwood', 'Clifton Hill')
+        'nearby' => array('Collingwood', 'Clifton Hill', 'Parkville')
     ),
     'richmond' => array(
         'postcode' => '3121',
@@ -28,7 +23,7 @@ $suburb_data = array(
     'hawthorn' => array(
         'postcode' => '3122',
         'description' => 'Hawthorn\'s leafy streets and established homes benefit from our experienced electricians.',
-        'nearby' => array('Kew', 'Camberwell', 'Richmond')
+        'nearby' => array('Kew', 'Box Hill', 'Richmond')
     ),
     'kew' => array(
         'postcode' => '3101',
@@ -49,7 +44,7 @@ $suburb_data = array(
     'default' => array(
         'postcode' => '',
         'description' => 'We provide expert electrical services throughout Melbourne.',
-        'nearby' => array('Carlton', 'Fitzroy', 'Richmond')
+        'nearby' => array('Fitzroy', 'Richmond', 'Collingwood')
     )
 );
 
@@ -120,11 +115,28 @@ $meta_description = "Licensed electrician in $suburb VIC. Available 24/7 for eme
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                        <img src="images/logo2.png" alt="Hometown Electrical Logo">
                     </a>
                 </div>
                 <div class="mobile-menu-toggle" aria-label="Toggle mobile menu" role="button" tabindex="0">
                     <i class="fas fa-bars"></i>
+                </div>
+                <div class="header-nav-inline">
+                    <a href="index.html">Home</a>
+                    <div class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu" aria-label="Services submenu">
+                            <li><a href="lighting.html">Lighting</a></li>
+                            <li><a href="switchboard-upgrade.html">Switchboard Upgrade</a></li>
+                            <li><a href="smoke-alarm.html">Smoke Alarm</a></li>
+                            <li><a href="fans.html">Ceiling Fan</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="gpos.html">Power</a></li>
+                        </ul>
+                    </div>
+                    <a href="service-areas.html">Service Areas</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
                 <div class="contact-info">
                     <div class="phone-number">
@@ -244,10 +256,10 @@ $meta_description = "Licensed electrician in $suburb VIC. Available 24/7 for eme
             
             <div class="services-tabs">
                 <div class="tab-buttons">
-                    <button class="tab-button active" data-tab="emergency">⚡ Emergency</button>
-                    <button class="tab-button" data-tab="residential">🏠 Residential</button>
-                    <button class="tab-button" data-tab="commercial">🏢 Commercial</button>
-                    <button class="tab-button" data-tab="safety">🛡️ Safety</button>
+                    <button class="tab-button active" data-tab="emergency"><i class="fas fa-bolt"></i> Emergency</button>
+                    <button class="tab-button" data-tab="residential"><i class="fas fa-home"></i> Residential</button>
+                    <button class="tab-button" data-tab="commercial"><i class="fas fa-building"></i> Commercial</button>
+                    <button class="tab-button" data-tab="safety"><i class="fas fa-shield-alt"></i> Safety</button>
                 </div>
                 
                 <div class="tab-content active" id="emergency">
@@ -465,7 +477,7 @@ $meta_description = "Licensed electrician in $suburb VIC. Available 24/7 for eme
                     <i class="fas fa-envelope"></i>
                     <div class="contact-details">
                         <h4>Email Us</h4>
-                        <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a>
+                        <a href="mailto:info@hometownelectrical.com.au">info@hometownelectrical.com.au</a>
                     </div>
                 </div>
                 <div class="contact-method">
@@ -485,7 +497,7 @@ $meta_description = "Licensed electrician in $suburb VIC. Available 24/7 for eme
             <div class="footer-top">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="images/logo.png" alt="Hometown Electrical Logo">
+                        <img src="images/logo2.png" alt="Hometown Electrical Logo">
                     </div>
                     <p>Your trusted electricians serving <?php echo $suburb; ?> and all Melbourne suburbs. Available 24/7.</p>
                     <div class="social-icons">
@@ -521,7 +533,7 @@ $meta_description = "Licensed electrician in $suburb VIC. Available 24/7 for eme
                     <h3>Contact Us</h3>
                     <ul class="contact-list">
                         <li><i class="fas fa-phone-alt"></i> <a href="tel:+61312345678">03 1234 5678</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@hometownelectrical.com.au">service@hometownelectrical.com.au</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@hometownelectrical.com.au">info@hometownelectrical.com.au</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Serving <?php echo $suburb; ?> VIC</li>
                     </ul>
                 </div>

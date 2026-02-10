@@ -357,8 +357,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const quoteForm = document.querySelector('.form-container form');
     
-    if (quoteForm) {
+    // Don't add JavaScript handler if form uses Netlify
+    const isNetlifyForm = quoteForm && (
+        quoteForm.hasAttribute('netlify') || 
+        quoteForm.hasAttribute('data-netlify') ||
+        quoteForm.getAttribute('data-netlify') === 'true'
+    );
+    
+    if (quoteForm && !isNetlifyForm) {
         quoteForm.addEventListener('submit', function(e) {
+            // Double-check: if this is a Netlify form, don't intercept
+            if (this.hasAttribute('netlify') || this.hasAttribute('data-netlify') || this.getAttribute('data-netlify') === 'true') {
+                return; // Let Netlify handle it
+            }
+            
             e.preventDefault();
             
             const submitButton = this.querySelector('button[type="submit"]');
@@ -397,13 +409,6 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => {
                 console.error('Error:', error);
-                
-                const messageElement = document.createElement('div');
-                messageElement.className = 'form-message error';
-                messageElement.innerHTML = 'An unexpected error occurred. Please try again or contact us directly.';
-                
-                this.insertAdjacentElement('afterend', messageElement);
-                
                 submitButton.innerHTML = originalButtonText;
                 submitButton.disabled = false;
             });
@@ -454,8 +459,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const bottomPadding = 6;
     const maxScroll = 160;
     const minScale = 1.1; 
-    const baseScale = 2;
-    const leftTarget = 12;
+    const baseScale = 1.4;
+    const maxTranslateY = 8;
+    const leftTarget = 5;
     const restMarginTop = 40;
     const minMarginTop = -70;
     const restHeaderPad = 10;
@@ -488,7 +494,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const headerH = headerTop.offsetHeight;
         const available = Math.max(0, headerH - base.initialTop - base.baseHeight * scale - bottomPadding);
-        const translateY = available * t;
+        const translateY = Math.min(maxTranslateY, available * t);
         const translateX = (leftTarget - base.initialLeft) * t;
         logo.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
 
@@ -538,6 +544,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onResize);
     window.addEventListener('orientationchange', onResize);
+    window.addEventListener('pageshow', () => {
+      base = null;
+      onScroll();
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        base = null;
+        onScroll();
+      }
+    });
     onResize();
   }
 

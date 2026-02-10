@@ -48,7 +48,7 @@ A professional, modern website for an electrical services business based in Melb
 2. Upload all files to your web hosting service
 3. Create/prepare the following directories and files:
    - `images/` directory with:
-     - `logo.png` (your company logo)
+     - `logo2.png` (your company logo)
      - `logo-white.png` (white version for footer)
      - `favicon.png` (site icon)
      - `og-image.jpg` (image for social sharing)

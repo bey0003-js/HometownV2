@@ -10,7 +10,7 @@ RewriteEngine On
 # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 # Suburb pages - SEO-friendly URLs
-# Converts: electrician-carlton → suburb-template.php?suburb=carlton
+# Converts: electrician-fitzroy → suburb-template.php?suburb=fitzroy
 RewriteRule ^electrician-([a-z-]+)/?$ suburb-template.php?suburb=$1 [L,QSA]
 
 # Alternative URL patterns (all point to same template)

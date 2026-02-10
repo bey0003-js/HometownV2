@@ -1,82 +1,304 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://melbourneelectricians.com.au/</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/services.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/services.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- Service Pages -->
   <url>
-    <loc>https://melbourneelectricians.com.au/lighting.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/lighting.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/switchboard-upgrade.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/switchboard-upgrade.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/smoke-alarm.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/smoke-alarm.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/security.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/security.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/fans.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/fans.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/gpos.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/gpos.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/service-areas.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/service-areas.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/about.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/about.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/contact.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/contact.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/privacy.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/privacy.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://melbourneelectricians.com.au/terms.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <loc>https://hometownelectrical.com.au/terms.html</loc>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-</urlset> 
+
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-ballarat.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-box-hill.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-brighton.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-brunswick.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-caroline-springs.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-caulfield.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-coburg.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-collingwood.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-corio.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-dandenong.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-deer-park.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-doncaster.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-elwood.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-fitzroy.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-footscray.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-frankston.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-geelong.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-glen-waverley.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-hawthorn.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-hoppers-crossing.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-keilor.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-kew.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-melton.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-northcote.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-point-cook.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-prahran.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-richmond.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-rockbank.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-rowville.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-south-yarra.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-st-kilda.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-tarneit.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-torquay.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-waurn-ponds.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-werribee.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-williamstown.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hometownelectrical.com.au/electrician-yarraville.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

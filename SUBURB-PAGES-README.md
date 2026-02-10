@@ -69,7 +69,7 @@ Edit `suburb-data.php` and add new suburbs to the `$all_suburbs` array:
 
 **Currently includes 25+ suburbs:**
 - Carlton, Fitzroy, Richmond, Brunswick, Hawthorn
-- Kew, Camberwell, Box Hill, St Kilda, Prahran
+- Kew, Box Hill, St Kilda, Prahran
 - South Yarra, Brighton, Elwood, Footscray, Yarraville
 - And many more!
 
